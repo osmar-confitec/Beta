@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 
 @Component({
   selector: 'project-B-home',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  boolvalue: boolean = false;
+
+  constructor(private service: BroadcastBooleanoService) {
+
+
+  }
+
+  addprop1(e) {
+
+    if (this.boolvalue) {
+      this.service.onChange(false);
+      this.boolvalue = false;
+    }
+
+    else {
+      this.service.onChange(true);
+      this.boolvalue = true;
+
+    }
+
+
+  }
 
   ngOnInit() {
+
+
+
   }
 
 }

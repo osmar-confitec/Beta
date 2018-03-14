@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { SequenciaNomeAComponent } from './sequencia-nome-a/sequencia-nome-a.component';
 import { SequenciaNomeBComponent } from './sequencia-nome-b/sequencia-nome-b.component';
 import { BroadcastServiceService } from './services/broadcast-service.service';
+import { InputsgeneratesComponent } from './inputsgenerates/inputsgenerates.component';
+import { BroadcastBooleanoService } from './services/broadcast-booleano.service';
+import { Inputsgenerates2Component } from './inputsgenerates2/inputsgenerates2.component';
 
 
 @NgModule({
@@ -21,13 +24,15 @@ import { BroadcastServiceService } from './services/broadcast-service.service';
     PaginaNaoEncontradaComponent,
     HomeComponent,
     SequenciaNomeAComponent,
-    SequenciaNomeBComponent
+    SequenciaNomeBComponent,
+    InputsgeneratesComponent,
+    Inputsgenerates2Component
   ],
   imports: [
     BrowserModule,
     routing
   ],
-  providers: [BroadcastServiceService],
+  providers: [BroadcastServiceService,BroadcastBooleanoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
