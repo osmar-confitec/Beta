@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
+import { EnderecoModel } from '../endereco/models/endereco-model';
 
 @Component({
   selector: 'project-B-home',
@@ -8,11 +9,17 @@ import { BroadcastBooleanoService } from '../services/broadcast-booleano.service
 })
 export class HomeComponent implements OnInit {
 
-  boolvalue: boolean = false;
+  public boolvalue: boolean = false;
+
+  
 
   constructor(private service: BroadcastBooleanoService) {
 
 
+  }
+
+  onRecebeuEndereco(valor){
+      console.dir(valor);
   }
 
   addprop1(e) {

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { AlfabetoComponent } from './alfabeto/alfabeto.component';
@@ -14,6 +14,8 @@ import { BroadcastServiceService } from './services/broadcast-service.service';
 import { InputsgeneratesComponent } from './inputsgenerates/inputsgenerates.component';
 import { BroadcastBooleanoService } from './services/broadcast-booleano.service';
 import { Inputsgenerates2Component } from './inputsgenerates2/inputsgenerates2.component';
+import { DataBindComponent } from './data-bind/data-bind.component';
+import { EnderecoComponent } from './endereco/endereco.component';
 
 
 @NgModule({
@@ -26,11 +28,14 @@ import { Inputsgenerates2Component } from './inputsgenerates2/inputsgenerates2.c
     SequenciaNomeAComponent,
     SequenciaNomeBComponent,
     InputsgeneratesComponent,
-    Inputsgenerates2Component
+    Inputsgenerates2Component,
+    DataBindComponent,
+    EnderecoComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [BroadcastServiceService,BroadcastBooleanoService],
   bootstrap: [AppComponent]
