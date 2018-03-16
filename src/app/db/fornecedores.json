@@ -1,0 +1,7 @@
+{
+  "fornecedores": [
+    { "id": 1, "nome": "Osmar Gonçalves Vieira", "endereco": "Rua tal de Souza", "bairro":"liberdade" },
+    { "id": 2, "nome": "Patricia", "endereco": "Rua tal de Souza", "bairro":"liberdade" },
+    { "id": 3, "nome": "José", "endereco": "Rua tal de Souza", "bairro":"liberdade" }
+  ]
+}

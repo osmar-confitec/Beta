@@ -1,0 +1,7 @@
+
+<form>
+  <input type="text" [ngModelOptions]="{standalone: true}"  [(ngModel)]="ddFornecedor.nome" ><br>
+  <input type="text" [ngModelOptions]="{standalone: true}"  [(ngModel)]="ddFornecedor.endereco" ><br>
+  <input type="text" [ngModelOptions]="{standalone: true}"  [(ngModel)]="ddFornecedor.bairro" ><br>
+  <input type="button" (click)="pesquisar()" value="pesquisar">
+</form>

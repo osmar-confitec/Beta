@@ -16,6 +16,11 @@ import { BroadcastBooleanoService } from './services/broadcast-booleano.service'
 import { Inputsgenerates2Component } from './inputsgenerates2/inputsgenerates2.component';
 import { DataBindComponent } from './data-bind/data-bind.component';
 import { EnderecoComponent } from './endereco/endereco.component';
+import { EnderecosComponent } from './enderecos/enderecos.component';
+import { DemandaComponent } from './demanda/demanda.component';
+import { FiltrosDemandaComponent } from './filtros-demanda/filtros-demanda.component';
+import { PrimeiraGridDemandaComponent } from './primeira-grid-demanda/primeira-grid-demanda.component';
+import { SegundaGridDemandaComponent } from './segunda-grid-demanda/segunda-grid-demanda.component';
 
 
 @NgModule({
@@ -30,7 +35,12 @@ import { EnderecoComponent } from './endereco/endereco.component';
     InputsgeneratesComponent,
     Inputsgenerates2Component,
     DataBindComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    EnderecosComponent,
+    DemandaComponent,
+    FiltrosDemandaComponent,
+    PrimeiraGridDemandaComponent,
+    SegundaGridDemandaComponent
   ],
   imports: [
     BrowserModule,

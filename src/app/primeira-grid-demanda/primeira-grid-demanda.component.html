@@ -1,0 +1,28 @@
+
+<project-B-filtros-demanda (Emtittttt)="onReceberfiltros($event)"  ></project-B-filtros-demanda>
+<table data-vertable="ver2">
+  <thead>
+    <tr class="row100 head">
+      <th class="column100 column1" data-column="column1">nome</th>
+      <th class="column100 column2" data-column="column2">endereco</th>
+      <th class="column100 column3" data-column="column3">bairro</th>
+      <th> Selecionar </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of ListaFornecedores"  class="row100">
+      <td>
+        {{item.nome}}
+      </td> 
+      <td>
+        {{item.endereco}}
+      </td> 
+      <td>
+        {{item.bairro}}
+      </td>
+      <td>
+        <button (click)="devolverEmissor(item)"   >Selecionar</button>
+      </td> 
+    </tr>
+  </tbody>
+</table>
