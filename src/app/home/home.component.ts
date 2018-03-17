@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 import { EnderecoModel } from '../endereco/models/endereco-model';
+import * as jQuery from 'jquery';
 
 @Component({
   selector: 'project-B-home',
@@ -14,8 +15,10 @@ export class HomeComponent implements OnInit {
   @ViewChild('txtElementAlterMore')  txtElementAlterMore :ElementRef;
 
   alterarInput(){
-
-      console.log(this.txtElementAlterMore);
+       let valor =  jQuery('#txtnome').val();
+       jQuery('#txtnome').css("background-color", "yellow");
+       console.log(valor);
+     // console.log(this.txtElementAlterMore);
       this.txtElementAlterMore.nativeElement.value = 10;
 
   }

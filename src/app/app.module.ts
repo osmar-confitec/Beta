@@ -21,6 +21,7 @@ import { DemandaComponent } from './demanda/demanda.component';
 import { FiltrosDemandaComponent } from './filtros-demanda/filtros-demanda.component';
 import { PrimeiraGridDemandaComponent } from './primeira-grid-demanda/primeira-grid-demanda.component';
 import { SegundaGridDemandaComponent } from './segunda-grid-demanda/segunda-grid-demanda.component';
+import { DatatableNetComponent } from './datatable-net/datatable-net.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { SegundaGridDemandaComponent } from './segunda-grid-demanda/segunda-grid
     DemandaComponent,
     FiltrosDemandaComponent,
     PrimeiraGridDemandaComponent,
-    SegundaGridDemandaComponent
+    SegundaGridDemandaComponent,
+    DatatableNetComponent
   ],
   imports: [
     BrowserModule,
