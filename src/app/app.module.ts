@@ -22,6 +22,8 @@ import { FiltrosDemandaComponent } from './filtros-demanda/filtros-demanda.compo
 import { PrimeiraGridDemandaComponent } from './primeira-grid-demanda/primeira-grid-demanda.component';
 import { SegundaGridDemandaComponent } from './segunda-grid-demanda/segunda-grid-demanda.component';
 import { DatatableNetComponent } from './datatable-net/datatable-net.component';
+import { FundoAmareloDirective } from './Diretivas/fundo-amarelo.directive';
+import { HighlightMouseDirective } from './Diretivas/highlight-mouse.directive';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { DatatableNetComponent } from './datatable-net/datatable-net.component';
     FiltrosDemandaComponent,
     PrimeiraGridDemandaComponent,
     SegundaGridDemandaComponent,
-    DatatableNetComponent
+    DatatableNetComponent,
+    FundoAmareloDirective,
+    HighlightMouseDirective
   ],
   imports: [
     BrowserModule,
