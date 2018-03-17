@@ -8,8 +8,8 @@
 <h1>Evento Gerado</h1>
 
 <hr>
-<label for="chkValorBoolean">  </label>
-<input type="checkbox" (change)="addprop1($event)" name="chkValorBoolean"  id="chkValorBoolean" checked="checked" >
+<label for="chkValorBoolean"> </label>
+<input type="checkbox" (change)="addprop1($event)" name="chkValorBoolean" id="chkValorBoolean" checked="checked">
 <hr>
 <project-B-inputsgenerates></project-B-inputsgenerates>
 <project-B-inputsgenerates></project-B-inputsgenerates>
@@ -19,20 +19,76 @@
 
 <hr>
 <p>Endereços</p>
-<project-B-endereco  (receberEndereco)="onRecebeuEndereco($event)" [cep]="01512-030" >
+<project-B-endereco (receberEndereco)="onRecebeuEndereco($event)" [cep]="01512-030">
 
 </project-B-endereco>
-<input type="button" (click)="alterarInput()"   value="identificar input"><br>
-<input type="text" #txtElementAlterMore >
+<input type="button" (click)="alterarInput()" value="identificar input">
+<br>
+<input type="text" #txtElementAlterMore>
 
-<a [routerLink]="['demanda']"  >demanda</a>
-<a [routerLink]="['table']"  >tabela</a>
+<a [routerLink]="['demanda']">demanda</a>
+<a [routerLink]="['table']">tabela</a>
+<a [routerLink]="['grid-detalhes']">grid-detalhes</a>
+
+<h1>Dados do Livro.</h1>
+<hr>
+<ul>
+  <li>
+    Data lancamento {{livro.datalancamento | date:'dd/MM/yyyy' }}
+  </li>
+  <li>
+    Estrelas {{livro.estrelas |  number : '2.1-1' }}
+  </li>
+  <li>
+    Titulo {{livro.titulo | uppercase | camelCase : { 'nome' :'Osmar' , 'titulo': 'titulado' } }}
+  </li>
+  <li>
+    Paginas {{livro.paginas | number }}
+  </li>
+  <li>
+    Preço {{livro.preco| currency : 'BRL' : true}}
+  </li>
+  <li>
+    Url {{livro.urlLivro}}
+  </li>
+  <li>
+      Livro {{livro| json}}
+    </li>
+</ul>
 
 
-<p  projectBFundoAmarelo  > Texto com fundo amarelo </p>
+<p projectBFundoAmarelo> Texto com fundo amarelo </p>
 
 <input type="text" name="txtnome" id="txtnome" value="">
 
-<p projectBHighlightMouse >Texto com mouse higlith </p>
+<p projectBHighlightMouse>Texto com mouse higlith </p>
 
-<p projectBHighlight [defaultColor]="'grey'" [highlightColor]="'red'" > Texto com cores customizadas  </p>
+<p projectBHighlight [defaultColor]="'grey'" [highlightColor]="'red'"> Texto com cores customizadas </p>
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+      <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr *ngFor="let row of data; let i = index" (click)="selectRow(i, row)">
+          <td>{{row.name}}</td>
+          <td><input [(ngModel)]="row.lastName" style="color:black"></td>
+        </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </div>

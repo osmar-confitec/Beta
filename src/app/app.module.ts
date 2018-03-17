@@ -26,6 +26,10 @@ import { FundoAmareloDirective } from './Diretivas/fundo-amarelo.directive';
 import { HighlightMouseDirective } from './Diretivas/highlight-mouse.directive';
 import { HighlightDirective } from './Diretivas/highlight.directive';
 import { DetailGridComponent } from './detail-grid/detail-grid.component';
+import { CamelCasePipe } from './pipe/camel-case.pipe';
+
+
+
 
 
 @NgModule({
@@ -50,7 +54,9 @@ import { DetailGridComponent } from './detail-grid/detail-grid.component';
     FundoAmareloDirective,
     HighlightMouseDirective,
     HighlightDirective,
-    DetailGridComponent
+    DetailGridComponent,
+    CamelCasePipe
+    
   ],
   imports: [
     BrowserModule,

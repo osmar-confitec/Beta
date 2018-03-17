@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 import { EnderecoModel } from '../endereco/models/endereco-model';
-import * as jQuery from 'jquery';
+import * as $ from 'jquery';
+import 'datatables.net'
+import { Book } from './models/book';
 
 @Component({
   selector: 'project-B-home',
@@ -10,16 +12,283 @@ import * as jQuery from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
+
+public tableWidget: any;
+
+  ngAfterViewInit() {
+    this.initDatatable()
+  }
+  
+  private initDatatable(): void {
+    debugger
+    let exampleId: any = $('#example');
+    this.tableWidget = exampleId.DataTable({
+      select: true
+    });
+  //   $('#example')
+  //     .removeClass('display')
+  //     .addClass('table table-striped table-bordered')
+  }
+
   public boolvalue: boolean = false;
 
-  @ViewChild('txtElementAlterMore')  txtElementAlterMore :ElementRef;
+  public data =
+    [
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Anna",
+        "lastName": "Konda"
+      },
+      {
+        "name": "Wayne",
+        "lastName": "Interessierts"
+      }];
 
-  alterarInput(){
-       let valor =  jQuery('#txtnome').val();
-       jQuery('#txtnome').css("background-color", "yellow");
-       console.log(valor);
-     // console.log(this.txtElementAlterMore);
-      this.txtElementAlterMore.nativeElement.value = 10;
+  livro: Book = new Book();
+
+  @ViewChild('txtElementAlterMore') txtElementAlterMore: ElementRef;
+
+  alterarInput() {
+    let valor = jQuery('#txtnome').val();
+    jQuery('#txtnome').css("background-color", "yellow");
+    console.log(valor);
+    // console.log(this.txtElementAlterMore);
+    this.txtElementAlterMore.nativeElement.value = 10;
 
   }
 
@@ -28,8 +297,8 @@ export class HomeComponent implements OnInit {
 
   }
 
-  onRecebeuEndereco(valor){
-      console.dir(valor);
+  onRecebeuEndereco(valor) {
+    console.dir(valor);
   }
 
   addprop1(e) {
@@ -50,7 +319,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
+    this.livro.datalancamento = new Date(2016, 5, 23);
 
+
+    this.livro.estrelas = 5.555;
+    this.livro.titulo = ' O encantar das baleias  ';
+    this.livro.paginas = 135;
+    this.livro.preco = 1500.33;
+    this.livro.urlLivro = 'https://www.google.com/';
 
   }
 
