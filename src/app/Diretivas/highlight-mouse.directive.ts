@@ -7,10 +7,28 @@ export class HighlightMouseDirective {
 
  @HostListener('mouseenter') onMouseover(){
 
-    
+  this._render.setElementStyle(
+    this._elementRef.nativeElement,
+    'backgroundColor',
+    'yellow'
+  );
 
  }
 
-  constructor(private _elementRef:ElementRef , private _render: Renderer) { }
+
+ @HostListener('mouseleave') onMouseleave(){
+
+  this._render.setElementStyle(
+    this._elementRef.nativeElement,
+    'backgroundColor',
+    'white'
+  );
+
+ }
+
+  constructor(private _elementRef:ElementRef , private _render: Renderer) 
+  { 
+      
+  }
 
 }

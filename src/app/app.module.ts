@@ -24,6 +24,8 @@ import { SegundaGridDemandaComponent } from './segunda-grid-demanda/segunda-grid
 import { DatatableNetComponent } from './datatable-net/datatable-net.component';
 import { FundoAmareloDirective } from './Diretivas/fundo-amarelo.directive';
 import { HighlightMouseDirective } from './Diretivas/highlight-mouse.directive';
+import { HighlightDirective } from './Diretivas/highlight.directive';
+import { DetailGridComponent } from './detail-grid/detail-grid.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { HighlightMouseDirective } from './Diretivas/highlight-mouse.directive';
     SegundaGridDemandaComponent,
     DatatableNetComponent,
     FundoAmareloDirective,
-    HighlightMouseDirective
+    HighlightMouseDirective,
+    HighlightDirective,
+    DetailGridComponent
   ],
   imports: [
     BrowserModule,
