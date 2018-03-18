@@ -65,7 +65,17 @@
 
 <p projectBHighlight [defaultColor]="'grey'" [highlightColor]="'red'"> Texto com cores customizadas </p>
 
-
+<ul>
+  <li *ngFor="let livr of listLivros"  >
+    Data lancamento {{livr.datalancamento | date:'dd/MM/yyyy' }}<br>
+    Estrelas {{livr.estrelas |  number : '2.1-1' }}<br>
+    Titulo {{livr.titulo | uppercase | camelCase : { 'nome' :'Osmar' , 'titulo': 'titulado' } }}<br>
+    Paginas {{livr.paginas | number }}<br>
+    Preço {{livr.preco| currency : 'BRL' : true}}<br>
+    Url {{livr.urlLivro}}<br>
+    Livro {{livr| json}}
+  </li>
+</ul>
 
 <div class="row">
     <div class="col-sm-12">

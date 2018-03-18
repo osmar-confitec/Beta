@@ -280,6 +280,44 @@ public tableWidget: any;
       }];
 
   livro: Book = new Book();
+  listLivros:Array<Book> = [
+    {
+      titulo:'Livro',
+
+     estrelas:10,
+      paginas:350,
+      preco:10.50,
+      datalancamento:new Date(),
+      urlLivro:'Google '
+    },
+    {
+      titulo:'As sereias',
+
+     estrelas:10,
+      paginas:350,
+      preco:10.50,
+      datalancamento:new Date(),
+      urlLivro:'Google '
+    },
+    {
+      titulo:'Os brazucas',
+
+     estrelas:10,
+      paginas:350,
+      preco:10.50,
+      datalancamento:new Date(),
+      urlLivro:'Google '
+    }, 
+    {
+      titulo:'O malvino',
+
+     estrelas:10,
+      paginas:350,
+      preco:10.50,
+      datalancamento:new Date(),
+      urlLivro:'Google '
+    }
+  ];
 
   @ViewChild('txtElementAlterMore') txtElementAlterMore: ElementRef;
 

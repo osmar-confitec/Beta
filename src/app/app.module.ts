@@ -27,6 +27,7 @@ import { HighlightMouseDirective } from './Diretivas/highlight-mouse.directive';
 import { HighlightDirective } from './Diretivas/highlight.directive';
 import { DetailGridComponent } from './detail-grid/detail-grid.component';
 import { CamelCasePipe } from './pipe/camel-case.pipe';
+import { FiltroArrayPipe } from './pipe/filtro-array.pipe';
 
 
 
@@ -55,7 +56,8 @@ import { CamelCasePipe } from './pipe/camel-case.pipe';
     HighlightMouseDirective,
     HighlightDirective,
     DetailGridComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayPipe
     
   ],
   imports: [
