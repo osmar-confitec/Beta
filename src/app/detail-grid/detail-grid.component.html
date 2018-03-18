@@ -29,6 +29,7 @@
   <label for="txtTextArea">Detalhes</label>
   <textarea [(ngModel)]='funcionario.detalhes' name="txtTextArea" id="txtTextArea"></textarea>
   <br>
+ 
 </form>
 
 <hr>
@@ -55,7 +56,7 @@
   <tbody>
     <tr>
       <td colspan="7">
-        <div [@visualizacao-linha-detalhe]="visualizacaolinhadetalhe" *ngFor="let item of listaFuncionarios">
+        <div [@visualizacao-linha-detalhe]="visualizacaolinhadetalhe" *ngFor="let item of listaFuncionarios; let idx = index"   [attr.data-index]="idx" >
           <div *ngIf="item.detalhes != '' then content else content_else"></div>
           <ng-template #content>
             <table style="width:100%">
@@ -68,14 +69,14 @@
                 </td>
                 <td data-title="Domestic Gross" data-type="currency">
 
-                  <input type="button" value="detalhes" (click)="detalhesRegistro(item)">
+                  <input type="button" value="detalhes" (click)="detalhesRegistro(item,idx)">
                 </td>
                 <td data-title="Domestic Gross" data-type="currency">
 
                   <input type="button" value="editar" (click)="editarRegistro(item)">
                 </td>
               </tr>
-              <tr    style="display:none;" class="id-{{item.id}}">
+              <tr  [@line]="linesControlTransition[idx]"     class="id-{{item.id}}">
                 <td colspan="5">
                   <p>Detalhes</p>
                   {{item.detalhes}}
@@ -94,7 +95,7 @@
                 </td>
                 <td data-title="Domestic Gross" data-type="currency">
 
-                  <input type="button" value="detalhes" (click)="detalhesRegistro(item)">
+                  <input type="button" value="detalhes" (click)="detalhesRegistro(item,idx)">
                 </td>
                 <td data-title="Domestic Gross" data-type="currency">
 
@@ -102,7 +103,7 @@
                 </td>
               </tr>
             
-              <tr style="display:none;" class="id-{{item.id}}">
+              <tr  [@line]="linesControlTransition[idx]"  class="id-{{item.id}}">
                 <td colspan="5">
                   <p>Detalhes</p>
                   Atenção não houve detalhamentos
