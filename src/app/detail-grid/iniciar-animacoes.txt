@@ -1,0 +1,41 @@
+utilizar animations 
+npm install --save @angular/animations
+npm install --save web-animations-js polfils 
+
+fazer o import no polyfils.js 
+import 'web-animations-js/web-animations.min.js'
+
+colocar isso no modulo principal
+
+import{  BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+colocar na lista de imports do modulo raiz 
+  imports: [
+    BrowserModule,
+    routing,
+    FormsModule,
+    BrowserAnimationsModule 
+
+importar no modulo import {trigger,state, style, transition,animate} from '@angular/animations' 
+
+
+  animations:[
+    trigger('visualizacao-linha-detalhe',[
+        state('hidden',style({
+          opacity:0
+
+        })),
+        state('visible',style({
+          opacity:1
+
+        })),
+        transition('hidden => visible', animate('500ms 0s ease-in')),
+        transition('visible => hidden', animate('500ms 0s ease-out'))
+    ])
+  ]
+
+  no elemento [@visualizacao-linha-detalhe]="visualizacaolinhadetalhe"
+
+  no js 
+
+  visualizacaolinhadetalhe = "hidden" // vai mudando o estado 

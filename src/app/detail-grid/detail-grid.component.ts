@@ -3,10 +3,26 @@ import { Funcionario } from './models/funcionario';
 import { Isexo } from './models/isexo';
 import * as $ from 'jquery';
 
+import {trigger,state, style, transition,animate} from '@angular/animations' 
+
 @Component({
   selector: 'project-B-detail-grid',
   templateUrl: './detail-grid.component.html',
-  styleUrls: ['./detail-grid.component.css']
+  styleUrls: ['./detail-grid.component.css'],
+  animations:[
+    trigger('visualizacao-linha-detalhe',[
+        state('hidden',style({
+          opacity:0
+
+        })),
+        state('visible',style({
+          opacity:1
+
+        })),
+        transition('hidden => visible', animate('500ms 0s ease-in')),
+        transition('visible => hidden', animate('500ms 0s ease-out'))
+    ])
+  ]
 })
 export class DetailGridComponent implements OnInit {
 
@@ -27,7 +43,11 @@ export class DetailGridComponent implements OnInit {
   detalhesRegistro(funcionario:Funcionario)
   {
   
-       let linhaTabela =  this.Tabela.nativeElement.querySelector(`.id-${funcionario.id}`);
+      
+    
+    
+    
+    let linhaTabela =  this.Tabela.nativeElement.querySelector(`.id-${funcionario.id}`);
        if (linhaTabela.style.display == `none`)
            linhaTabela.style.display = `block`;
        else
