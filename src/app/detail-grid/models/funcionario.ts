@@ -4,7 +4,7 @@ export class Funcionario {
  
    public id:number;
    
-   public detalhes:string;
+   public detalhes:string = '';
    
    public nome:string;
 
