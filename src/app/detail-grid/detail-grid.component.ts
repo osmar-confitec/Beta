@@ -24,13 +24,36 @@ import {trigger,state, style, transition,animate, keyframes} from '@angular/anim
           style({opacity:0.8,transform:'translatex(-10px)',offset:0.2}),
           style({opacity:0,transform:'translatex(30px)',offset:1})
     ])))
-    ])
+    ]),
+
+    trigger('line',[
+      state('visible',style({
+        opacity:1
+      })),
+      state('hidden',style({
+        opacity:0
+      })),
+
+      transition('hidden => visible', animate('500ms 0s ease-in', keyframes([
+            style({opacity:0,transform:'translatex(-30px)',offset:0}),
+            style({opacity:0.8,transform:'translatex(10px)',offset:0.8}),
+            style({opacity:1,transform:'translatex(0px)',offset:1})
+      ]))),
+      transition('visible => hidden', animate('500ms 0s ease-out', keyframes([
+        style({opacity:1,transform:'translatex(0px)',offset:0}),
+        style({opacity:0.8,transform:'translatex(-10px)',offset:0.2}),
+        style({opacity:0,transform:'translatex(30px)',offset:1})
+  ])))
+  ])
+
+
   ]
 })
 export class DetailGridComponent implements OnInit {
 
 
   visualizacaolinhadetalhe = 'ready'
+  Line = 'visible'
 
   @ViewChild('MinhaTabela') Tabela:ElementRef;
   idSeq:number = 13;
@@ -50,14 +73,14 @@ export class DetailGridComponent implements OnInit {
   {
   
       
-    
+    this.Line = 'hidden';
     
     
     let linhaTabela =  this.Tabela.nativeElement.querySelector(`.id-${funcionario.id}`);
        if (linhaTabela.style.display == `none`)
            linhaTabela.style.display = `block`;
        else
-           linhaTabela.style.display = `none`;        
+           linhaTabela.style.display = `none`;       
  
         // let linhaAdd:string  = ` 
         // <tr>
