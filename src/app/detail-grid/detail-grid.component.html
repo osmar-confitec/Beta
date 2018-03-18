@@ -55,7 +55,7 @@
   <tbody>
     <tr>
       <td colspan="7">
-        <div *ngFor="let item of listaFuncionarios">
+        <div [@visualizacao-linha-detalhe]="visualizacaolinhadetalhe" *ngFor="let item of listaFuncionarios">
           <div *ngIf="item.detalhes != '' then content else content_else"></div>
           <ng-template #content>
             <table style="width:100%">

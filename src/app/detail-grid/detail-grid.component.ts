@@ -3,7 +3,7 @@ import { Funcionario } from './models/funcionario';
 import { Isexo } from './models/isexo';
 import * as $ from 'jquery';
 
-import {trigger,state, style, transition,animate} from '@angular/animations' 
+import {trigger,state, style, transition,animate, keyframes} from '@angular/animations' 
 
 @Component({
   selector: 'project-B-detail-grid',
@@ -11,20 +11,26 @@ import {trigger,state, style, transition,animate} from '@angular/animations'
   styleUrls: ['./detail-grid.component.css'],
   animations:[
     trigger('visualizacao-linha-detalhe',[
-        state('hidden',style({
-          opacity:0
-
-        })),
-        state('visible',style({
+        state('ready',style({
           opacity:1
-
         })),
-        transition('hidden => visible', animate('500ms 0s ease-in')),
-        transition('visible => hidden', animate('500ms 0s ease-out'))
+        transition('void => ready', animate('500ms 0s ease-in', keyframes([
+              style({opacity:0,transform:'translatex(-30px)',offset:0}),
+              style({opacity:0.8,transform:'translatex(10px)',offset:0.8}),
+              style({opacity:1,transform:'translatex(0px)',offset:1})
+        ]))),
+        transition('ready => void', animate('500ms 0s ease-out', keyframes([
+          style({opacity:1,transform:'translatex(0px)',offset:0}),
+          style({opacity:0.8,transform:'translatex(-10px)',offset:0.2}),
+          style({opacity:0,transform:'translatex(30px)',offset:1})
+    ])))
     ])
   ]
 })
 export class DetailGridComponent implements OnInit {
+
+
+  visualizacaolinhadetalhe = 'ready'
 
   @ViewChild('MinhaTabela') Tabela:ElementRef;
   idSeq:number = 13;
