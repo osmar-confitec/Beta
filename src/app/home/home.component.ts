@@ -355,6 +355,11 @@ public tableWidget: any;
 
   }
 
+  resultadoSomatoria(resultado)
+  {
+    console.log(  ` resultado somatoria ${resultado} ` );
+  }
+
   ngOnInit() {
 
     this.livro.datalancamento = new Date(2016, 5, 23);

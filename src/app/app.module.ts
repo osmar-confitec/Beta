@@ -28,6 +28,7 @@ import { HighlightDirective } from './Diretivas/highlight.directive';
 import { DetailGridComponent } from './detail-grid/detail-grid.component';
 import { CamelCasePipe } from './pipe/camel-case.pipe';
 import { FiltroArrayPipe } from './pipe/filtro-array.pipe';
+import { BtntestComponent } from './btntest/btntest.component';
 
 
 
@@ -57,7 +58,8 @@ import { FiltroArrayPipe } from './pipe/filtro-array.pipe';
     HighlightDirective,
     DetailGridComponent,
     CamelCasePipe,
-    FiltroArrayPipe
+    FiltroArrayPipe,
+    BtntestComponent
     
   ],
   imports: [
