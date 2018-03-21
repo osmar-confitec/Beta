@@ -63,7 +63,7 @@
 
 <p projectBHighlightMouse>Texto com mouse higlith </p>
 
-<p projectBHighlight [defaultColor]="'grey'" [highlightColor]="'red'"> Texto com cores customizadas </p>
+<p projectBHighlight projectBFundoAmarelo [defaultColor]="'grey'" [highlightColor]="'red'"> Texto com cores customizadas </p>
 
 <ul>
   <li *ngFor="let livr of listLivros"  >
@@ -130,3 +130,12 @@
 
 
       <input type="button" (click)="consultarNovamente()" value="consultar novamente paginacao">
+
+     
+     
+      checar
+      <input type="checkbox" [(ngModel)]="mostrarDiv" name="chk" id="chk">
+
+      <div *ngIf="mostrarDiv"  >
+          Vou ser mostrado
+      </div>
