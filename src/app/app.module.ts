@@ -29,6 +29,7 @@ import { DetailGridComponent } from './detail-grid/detail-grid.component';
 import { CamelCasePipe } from './pipe/camel-case.pipe';
 import { FiltroArrayPipe } from './pipe/filtro-array.pipe';
 import { BtntestComponent } from './btntest/btntest.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -59,7 +60,8 @@ import { BtntestComponent } from './btntest/btntest.component';
     DetailGridComponent,
     CamelCasePipe,
     FiltroArrayPipe,
-    BtntestComponent
+    BtntestComponent,
+    PaginationComponent
     
   ],
   imports: [
