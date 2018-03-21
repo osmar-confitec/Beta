@@ -120,6 +120,13 @@
        [numeroSoma]="30"
         (somar)="resultadoSomatoria($event)"  
         ></project-B-btntest>
-    
 
-        <project-B-pagination></project-B-pagination>
+
+      
+      <project-B-pagination 
+        (EmitterPage)="onReceberPager($event)" 
+        [pagination]="paginationprop"   >
+      </project-B-pagination>
+
+
+      <input type="button" (click)="consultarNovamente()" value="consultar novamente paginacao">
