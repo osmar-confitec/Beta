@@ -8,9 +8,8 @@ export class PaginationServiceService {
 
 
   tratarPaginacao(pagination:Ipage) {
-    let qtdRegisterPage = 10;
     pagination.pages = [];
-    pagination.totalPages = Math.ceil(pagination.totalRegisters / qtdRegisterPage);
+    pagination.totalPages = Math.ceil(pagination.totalRegisters / pagination.qtdRegisterPage);
     let startPage: number, endPage: number;
     //se for menor ou igual a 10 show all 
     if (pagination.totalPages <= 10) {
@@ -32,8 +31,8 @@ export class PaginationServiceService {
     }
 
     // calculate start and end item indexes
-    let startIndex = (pagination.currentPage - 1) * qtdRegisterPage;
-    let endIndex = Math.min(startIndex + qtdRegisterPage - 1, pagination.totalRegisters - 1);
+    let startIndex = (pagination.currentPage - 1) * pagination.qtdRegisterPage;
+    let endIndex = Math.min(startIndex + pagination.qtdRegisterPage - 1, pagination.totalRegisters - 1);
 
     for (let i = startPage; i < (endPage + 1); i++) {
       pagination.pages.push({
@@ -43,5 +42,4 @@ export class PaginationServiceService {
       });
     }
   }
-
 }

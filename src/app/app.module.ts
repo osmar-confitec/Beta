@@ -30,6 +30,7 @@ import { CamelCasePipe } from './pipe/camel-case.pipe';
 import { FiltroArrayPipe } from './pipe/filtro-array.pipe';
 import { BtntestComponent } from './btntest/btntest.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { MyCurrencyFormatterDirective } from './Diretivas/my-currency-formatter.directive';
 
 
 
@@ -61,7 +62,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     CamelCasePipe,
     FiltroArrayPipe,
     BtntestComponent,
-    PaginationComponent
+    PaginationComponent,
+    MyCurrencyFormatterDirective
     
   ],
   imports: [

@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
     currentPage : 1,
     totalRegisters:500,
-    
+    qtdRegisterPage:10,
     totalPages:0,
     pages:[]
 
@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit {
 
       currentPage : 1,
       totalRegisters:500,
-      
+      qtdRegisterPage:10,
       totalPages:0,
       pages:[]
   
