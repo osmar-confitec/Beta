@@ -63,7 +63,9 @@
 
 <p projectBHighlightMouse>Texto com mouse higlith </p>
 
-<p projectBHighlight [defaultColor]="'grey'" [highlightColor]="'red'"> Texto com cores customizadas </p>
+
+
+<p projectBHighlight projectBFundoAmarelo [defaultColor]="'grey'" [highlightColor]="'red'"> Texto com cores customizadas </p>
 
 <ul>
   <li *ngFor="let livr of listLivros"  >
@@ -128,5 +130,19 @@
         [pagination]="paginationprop"   >
       </project-B-pagination>
 
+<<<<<<< HEAD
       <input type="text" projectBMyCurrencyFormatter >
       <input type="button" (click)="consultarNovamente()" value="consultar novamente paginacao">
+=======
+
+      <input type="button" (click)="consultarNovamente()" value="consultar novamente paginacao">
+
+     
+     
+      checar
+      <input type="checkbox" [(ngModel)]="mostrarDiv" name="chk" id="chk">
+
+      <div *ngIf="mostrarDiv"  >
+          Vou ser mostrado
+      </div>
+>>>>>>> acc5806bed95f044ffd52d182ccee31cca95b188

@@ -13,6 +13,7 @@ import { Ipage } from '../pagination/interface/ipage';
 })
 export class HomeComponent implements OnInit {
 
+  mostrarDiv:boolean = false;
   paginationprop:Ipage ={
 
     currentPage : 1,
