@@ -31,6 +31,11 @@ import { FiltroArrayPipe } from './pipe/filtro-array.pipe';
 import { BtntestComponent } from './btntest/btntest.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { MyCurrencyFormatterDirective } from './Diretivas/my-currency-formatter.directive';
+import { MoedaPipePipe } from './pipe/moeda-pipe.pipe';
+import { CpfPipePipe } from './pipe/cpf-pipe.pipe';
+import { CnpjPipePipe } from './pipe/cnpj-pipe.pipe';
+import { TelefonePipePipe } from './pipe/telefone-pipe.pipe';
+import { CpfDiretivaDirective } from './Diretivas/cpf-diretiva.directive';
 
 
 
@@ -63,7 +68,12 @@ import { MyCurrencyFormatterDirective } from './Diretivas/my-currency-formatter.
     FiltroArrayPipe,
     BtntestComponent,
     PaginationComponent,
-    MyCurrencyFormatterDirective
+    MyCurrencyFormatterDirective,
+    MoedaPipePipe,
+    CpfPipePipe,
+    CnpjPipePipe,
+    TelefonePipePipe,
+    CpfDiretivaDirective
     
   ],
   imports: [

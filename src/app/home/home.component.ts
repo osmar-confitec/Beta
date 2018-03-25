@@ -13,6 +13,7 @@ import { Ipage } from '../pagination/interface/ipage';
 })
 export class HomeComponent implements OnInit {
 
+  cpfValor:string  = '21371885893';
   mostrarDiv:boolean = false;
   paginationprop:Ipage ={
 
