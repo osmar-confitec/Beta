@@ -36,6 +36,7 @@ import { CpfPipePipe } from './pipe/cpf-pipe.pipe';
 import { CnpjPipePipe } from './pipe/cnpj-pipe.pipe';
 import { TelefonePipePipe } from './pipe/telefone-pipe.pipe';
 import { CpfDiretivaDirective } from './Diretivas/cpf-diretiva.directive';
+import { CnpjDiretivaDirective } from './Diretivas/cnpj-diretiva.directive';
 
 
 
@@ -73,7 +74,8 @@ import { CpfDiretivaDirective } from './Diretivas/cpf-diretiva.directive';
     CpfPipePipe,
     CnpjPipePipe,
     TelefonePipePipe,
-    CpfDiretivaDirective
+    CpfDiretivaDirective,
+    CnpjDiretivaDirective
     
   ],
   imports: [
