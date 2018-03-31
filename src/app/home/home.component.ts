@@ -3,8 +3,16 @@ import { BroadcastBooleanoService } from '../services/broadcast-booleano.service
 import { EnderecoModel } from '../endereco/models/endereco-model';
 import * as $ from 'jquery';
 import 'datatables.net'
+
+
+
 import { Book } from './models/book';
 import { Ipage } from '../pagination/interface/ipage';
+
+
+import   'assets/PrayTimes.js' ;
+
+
 
 @Component({
   selector: 'project-B-home',
@@ -430,8 +438,11 @@ public tableWidget: any;
 
   ngOnInit() {
 
+  let der =  new  PrayTimes(); 
+    console.dir(der.getTimes(new Date(), [43, -80], -5));
    
-
+   // let valortestado:any =    PrayTimes
+   // console.log(valortestado);
     this.livro.datalancamento = new Date(2016, 5, 23);
 
 
