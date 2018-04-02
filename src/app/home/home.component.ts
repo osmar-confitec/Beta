@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 import { EnderecoModel } from '../endereco/models/endereco-model';
+
+
 import * as $ from 'jquery';
 import 'datatables.net'
 
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
 
   importarjs(){
 
-    this.serviceLoadScript.load([{name:`Osmar`,src:`www.google.com`,loaded:false}]);
+    this.serviceLoadScript.load([{name:`alertify`,src:`assets/alertify.js`,loaded:false,reason:''}]);
     
 
 /*  console.log('preparing to load...')
@@ -438,7 +440,8 @@ public tableWidget: any;
 
   }
 
-  constructor(private service: BroadcastBooleanoService , private serviceLoadScript:ScriptLoaderServiceService) {
+  constructor(private service: BroadcastBooleanoService ,
+              private serviceLoadScript:ScriptLoaderServiceService) {
 
 
   }

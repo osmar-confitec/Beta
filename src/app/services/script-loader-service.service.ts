@@ -8,69 +8,58 @@ export class ScriptLoaderServiceService {
 
   private scriptsLoad: ScriptModel[] = [];
   load(scripts: ScriptModel[]) {
+    var promises: any[] = [];
+    scripts.forEach((script) => promises.push(this.loadScript(script)));
+    Promise.all(promises).then();
 
-     var promises: any[] = [];
-     scripts.forEach((script) => promises.push(this.loadScript(script)));
-     Promise.all(promises).then( resp =>{
-      resp.map(response => console.dir(response));
-          //this.scriptsLoad.push(resp)
-     });
+  }
 
- }
+  loadPromisse(scripts: ScriptModel[]) {
+    var promises: any[] = [];
+    scripts.forEach((script) => promises.push(this.loadScript(script)));
+    return Promise.all(promises);
+  }
 
+  addScript(model: ScriptModel) {
 
- loadScript(model: ScriptModel) {
-  return new Promise((resolve, reject) => {
-        let encontrado = false;
-        if (this.scriptsLoad.length <=0)
-            resolve({name:model.name,src:model.src,loaded:false});
-        for(let index in this.scriptsLoad )
-        {
-              if (this.scriptsLoad[index].loaded)
-                  reject({name:model.name,src:model.src,loaded:true});
-              else 
-                 resolve({name:model.name,src:model.src,loaded:false});
+    console.log('preparing to load...');
+    let node = null;
+    node = document.createElement('script');
+    node.src = model.src;
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
+    document.getElementsByTagName('head')[0].appendChild(node);
+
+  }
+  aceptscript(model: ScriptModel) {
+    model.loaded = true;
+    this.addScript(model);
+    this.scriptsLoad.push(model);
+  }
+  loadScript(model: ScriptModel) {
+    return new Promise((resolve, reject) => {
+      let scriptencontrado = false;
+      if (this.scriptsLoad.length <= 0) {
+        this.aceptscript(model);
+        resolve(model);
+      }
+      for (let index in this.scriptsLoad) {
+        if (this.scriptsLoad[index].name === model.name) {
+          scriptencontrado = true;
+          break;
         }
-
-  });
- }
-
- // public load(script: ScriptModel):void  {
- // public load(script: ScriptModel): Observable<ScriptModel> {
-   /*  return new Observable<ScriptModel>((observer: Observer<ScriptModel>) => {
-      let existingScript: ScriptModel = null;
-      this.scripts.forEach((x: ScriptModel) => {
-        if (x.name === script.name)
-          existingScript = x;
-      });
-
-      // Complete if already loaded
-      if (existingScript && existingScript.loaded) {
-        observer.next(existingScript);
-        observer.complete();
       }
-      else {
-        // Add the script
-        this.scripts = [...this.scripts, script];
-
-        // Load the script
-        let scriptElement = document.createElement("script");
-        scriptElement.type = "text/javascript";
-        scriptElement.src = script.src;
-
-        scriptElement.onload = () => {
-          script.loaded = true;
-          observer.next(script);
-          observer.complete();
-        };
-
-        scriptElement.onerror = (error: any) => {
-          observer.error("Couldn't load script " + script.src);
-        };
-
-        document.getElementsByTagName('body')[0].appendChild(scriptElement);
+      if (!scriptencontrado) {
+        this.aceptscript(model);
+        resolve(model);
       }
-    }); */
- // }
-
+      else{
+        console.log( ` script já lido ` )
+        model.reason = ` script já lido ` ;
+        resolve(model);
+      }
+        
+    });
+  }
 }

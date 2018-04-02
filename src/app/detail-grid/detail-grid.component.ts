@@ -4,6 +4,7 @@ import { Isexo } from './models/isexo';
 import * as $ from 'jquery';
 
 import {trigger,state, style, transition,animate, keyframes} from '@angular/animations' 
+import { ScriptLoaderServiceService } from '../services/script-loader-service.service';
 
 
 @Component({
@@ -73,6 +74,11 @@ export class DetailGridComponent implements OnInit {
 
       this.funcionario = new Funcionario();
       this.funcionario = funcionario;
+  }
+
+  Importarjs(){
+
+    this.serviceLoadScript.load([{name:`alertify`,src:`assets/alertify.js`,loaded:false,reason:''}]);
   }
 
   detalhesRegistro(funcionario:Funcionario,idx:number)
@@ -173,7 +179,7 @@ export class DetailGridComponent implements OnInit {
   ];
   funcionario: Funcionario = new Funcionario();
   
-  constructor() { }
+  constructor(private serviceLoadScript:ScriptLoaderServiceService) { }
 
   ngOnInit() {
 
