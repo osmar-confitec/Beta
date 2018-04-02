@@ -37,6 +37,7 @@ import { CnpjPipePipe } from './pipe/cnpj-pipe.pipe';
 import { TelefonePipePipe } from './pipe/telefone-pipe.pipe';
 import { CpfDiretivaDirective } from './Diretivas/cpf-diretiva.directive';
 import { CnpjDiretivaDirective } from './Diretivas/cnpj-diretiva.directive';
+import { ScriptLoaderServiceService } from './services/script-loader-service.service';
 
 
 
@@ -84,7 +85,7 @@ import { CnpjDiretivaDirective } from './Diretivas/cnpj-diretiva.directive';
     FormsModule,
     BrowserAnimationsModule 
   ],
-  providers: [BroadcastServiceService,BroadcastBooleanoService],
+  providers: [BroadcastServiceService,BroadcastBooleanoService,ScriptLoaderServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

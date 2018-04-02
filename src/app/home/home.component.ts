@@ -4,13 +4,16 @@ import { EnderecoModel } from '../endereco/models/endereco-model';
 import * as $ from 'jquery';
 import 'datatables.net'
 
+import   'assets/maskplugin.js' ;
 
 
 import { Book } from './models/book';
 import { Ipage } from '../pagination/interface/ipage';
 
+import { Calculator , test } from './models/Calculator'
+import { ScriptLoaderServiceService } from '../services/script-loader-service.service';
 
-import   'assets/PrayTimes.js' ;
+
 
 
 
@@ -20,6 +23,27 @@ import   'assets/PrayTimes.js' ;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  Rodarjs(){
+
+    let pad = new Padronizada();
+    pad.Func();
+  }
+
+  importarjs(){
+
+    this.serviceLoadScript.load([{name:`Osmar`,src:`www.google.com`,loaded:false}]);
+    
+
+/*  console.log('preparing to load...')
+        let node = document.createElement('script');
+        node.src = `assets/Padronizada.js`;
+        node.type = 'text/javascript';
+        node.async = true;
+        node.charset = 'utf-8';
+        document.getElementsByTagName('head')[0].appendChild(node); */
+  
+  }
 
   cpfValor:string  = '21371885893';
   mostrarDiv:boolean = false;
@@ -92,7 +116,15 @@ export class HomeComponent implements OnInit {
 public tableWidget: any;
 
   ngAfterViewInit() {
-    this.initDatatable()
+
+
+    this.initDatatable();
+ 
+
+
+
+   let cf:any =  $('#mascarado');
+   cf.mask('99/99/9999');
   }
   
   private initDatatable(): void {
@@ -406,7 +438,7 @@ public tableWidget: any;
 
   }
 
-  constructor(private service: BroadcastBooleanoService) {
+  constructor(private service: BroadcastBooleanoService , private serviceLoadScript:ScriptLoaderServiceService) {
 
 
   }
@@ -438,9 +470,9 @@ public tableWidget: any;
 
   ngOnInit() {
 
-  let der =  new  PrayTimes(); 
-    console.dir(der.getTimes(new Date(), [43, -80], -5));
-   
+    
+    let der =  new  PrayTimes(); 
+    console.dir(der.getTimes(new Date(), [43, -80], -5)); 
    // let valortestado:any =    PrayTimes
    // console.log(valortestado);
     this.livro.datalancamento = new Date(2016, 5, 23);

@@ -5,4 +5,13 @@ interface NodeModule {
 }
 
 
+
+
 declare var PrayTimes:any;
+
+declare var Add:any;
+
+declare var System: any;
+
+declare var Padronizada: any;
+
