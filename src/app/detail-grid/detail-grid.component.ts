@@ -78,7 +78,7 @@ export class DetailGridComponent implements OnInit {
 
   Importarjs(){
 
-    this.serviceLoadScript.load([{name:`alertify`,src:`assets/alertify.js`,loaded:false,reason:''}]);
+    this.serviceLoadScript.load({name:`alertify`,src:`assets/alertify.js`,loaded:false,reason:''});
   }
 
   detalhesRegistro(funcionario:Funcionario,idx:number)

@@ -7,14 +7,14 @@ import { Observer } from 'rxjs/Observer'; */
 export class ScriptLoaderServiceService {
 
   private scriptsLoad: ScriptModel[] = [];
-  load(scripts: ScriptModel[]) {
+  load(...scripts: ScriptModel[]) {
     var promises: any[] = [];
     scripts.forEach((script) => promises.push(this.loadScript(script)));
     Promise.all(promises).then();
 
   }
 
-  loadPromisse(scripts: ScriptModel[]) {
+  loadPromisse(...scripts: ScriptModel[]) {
     var promises: any[] = [];
     scripts.forEach((script) => promises.push(this.loadScript(script)));
     return Promise.all(promises);
@@ -43,6 +43,7 @@ export class ScriptLoaderServiceService {
       if (this.scriptsLoad.length <= 0) {
         this.aceptscript(model);
         resolve(model);
+        return
       }
       for (let index in this.scriptsLoad) {
         if (this.scriptsLoad[index].name === model.name) {

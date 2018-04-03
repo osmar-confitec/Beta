@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
 
   importarjs(){
 
-    this.serviceLoadScript.load([{name:`alertify`,src:`assets/alertify.js`,loaded:false,reason:''}]);
+    this.serviceLoadScript.load({name:`alertify`,src:`assets/alertify.js`,loaded:false,reason:''});
     
 
 /*  console.log('preparing to load...')
