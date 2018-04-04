@@ -8,6 +8,7 @@ import { DataBindComponent } from './data-bind/data-bind.component';
 import { DemandaComponent } from './demanda/demanda.component';
 import { DatatableNetComponent } from './datatable-net/datatable-net.component';
 import { DetailGridComponent } from './detail-grid/detail-grid.component';
+import { UploadComponent } from './upload/upload.component';
 
 const APP_ROUTES : Routes = [
     {path:''  , component:HomeComponent },
@@ -16,6 +17,7 @@ const APP_ROUTES : Routes = [
     {path:'demanda', component: DemandaComponent},
     {path:'table', component: DatatableNetComponent},
     {path:'grid-detalhes', component: DetailGridComponent},
+    {path:'upload', component: UploadComponent},
     
     {path:'**'  , component:PaginaNaoEncontradaComponent }
 ]; 

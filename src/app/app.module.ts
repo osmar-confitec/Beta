@@ -38,13 +38,16 @@ import { TelefonePipePipe } from './pipe/telefone-pipe.pipe';
 import { CpfDiretivaDirective } from './Diretivas/cpf-diretiva.directive';
 import { CnpjDiretivaDirective } from './Diretivas/cnpj-diretiva.directive';
 import { ScriptLoaderServiceService } from './services/script-loader-service.service';
-
+import { UploadComponent } from './upload/upload.component';
+import { FileSelectDirective , FileUploadModule } from 'ng2-file-upload';
 
 
 
 
 @NgModule({
   declarations: [
+    
+    
     AppComponent,
     AlunoComponent,
     AlfabetoComponent,
@@ -76,10 +79,12 @@ import { ScriptLoaderServiceService } from './services/script-loader-service.ser
     CnpjPipePipe,
     TelefonePipePipe,
     CpfDiretivaDirective,
-    CnpjDiretivaDirective
+    CnpjDiretivaDirective,
+    UploadComponent
     
   ],
   imports: [
+    FileUploadModule,
     BrowserModule,
     routing,
     FormsModule,
