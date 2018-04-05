@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 import { EnderecoModel } from '../endereco/models/endereco-model';
 
@@ -24,8 +24,31 @@ import { ScriptLoaderServiceService } from '../services/script-loader-service.se
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements
+AfterViewChecked,
+OnDestroy,
+AfterViewInit ,  OnInit , OnChanges , DoCheck , AfterContentInit , AfterContentChecked {
 
+  ngOnDestroy(): void {
+    console.log(` ngOnDestroy `)
+  }
+  ngAfterViewChecked(): void {
+    console.log(` ngAfterViewChecked `)
+  }
+  ngAfterContentChecked(): void {
+    console.log(` ngAfterContentChecked `)
+  }
+  ngAfterContentInit(): void {
+    console.log(` AfterContentInit `)
+  }
+  ngDoCheck(): void {
+    console.log(` ngDoCheck `)
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+   
+    console.log(` Onchanges ${ console.dir(changes)} `)
+
+  }
   Rodarjs(){
 
     let pad = new Padronizada();
@@ -119,7 +142,7 @@ public tableWidget: any;
 
   ngAfterViewInit() {
 
-
+    console.log(` ngAfterViewInit `)
     this.initDatatable();
  
 
