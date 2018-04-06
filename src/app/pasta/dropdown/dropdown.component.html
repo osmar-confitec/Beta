@@ -1,0 +1,4 @@
+<select name="selecionar" id="selecionar">
+  <option value="0">Selecione</option>
+  <option *ngFor="let item of collection"  value="{{item.id}}">{{item.descricao}}</option>
+</select>
