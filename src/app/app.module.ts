@@ -40,6 +40,7 @@ import { CnpjDiretivaDirective } from './Diretivas/cnpj-diretiva.directive';
 import { ScriptLoaderServiceService } from './services/script-loader-service.service';
 import { UploadComponent } from './upload/upload.component';
 import { FileSelectDirective , FileUploadModule } from 'ng2-file-upload';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -86,6 +87,7 @@ import { FileSelectDirective , FileUploadModule } from 'ng2-file-upload';
   imports: [
     FileUploadModule,
     BrowserModule,
+    SharedModule.forRoot(),
     routing,
     FormsModule,
     BrowserAnimationsModule 
