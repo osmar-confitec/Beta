@@ -9,19 +9,22 @@ import { DemandaComponent } from './demanda/demanda.component';
 import { DatatableNetComponent } from './datatable-net/datatable-net.component';
 import { DetailGridComponent } from './detail-grid/detail-grid.component';
 import { UploadComponent } from './upload/upload.component';
+import { AuthGuard } from './guard/auth-guard.guard';
+import { LoginComponent } from './login/login.component';
 
 const APP_ROUTES : Routes = [
-    {path:''  , component:HomeComponent },
-    {path:'aluno', component: AlunoComponent},
-    {path:'bind', component: DataBindComponent},
-    {path:'demanda', component: DemandaComponent},
-    {path:'table', component: DatatableNetComponent},
-    {path:'grid-detalhes', component: DetailGridComponent},
-    {path:'upload', component: UploadComponent},
-    {path:'pasta/animals',loadChildren:'app/pasta/home-animal/home-animal.module#HomeAnimalModule'},
-    {path:'pasta/cachorro',loadChildren:'app/pasta/cachorro/cachorro.module#CachorroModule'},
-    {path:'pasta/gato',loadChildren:'app/pasta/gato/gato.module#GatoModule'},
-    {path:'**'  , component:PaginaNaoEncontradaComponent }
+    {path:''  , component:HomeComponent , canActivate:[AuthGuard] },
+    {path:'aluno', component: AlunoComponent , canActivate:[AuthGuard]},
+    {path:'login', component: LoginComponent },
+    {path:'bind', component: DataBindComponent , canActivate:[AuthGuard]},
+    {path:'demanda', component: DemandaComponent , canActivate:[AuthGuard]},
+    {path:'table', component: DatatableNetComponent , canActivate:[AuthGuard]},
+    {path:'grid-detalhes', component: DetailGridComponent , canActivate:[AuthGuard]},
+    {path:'upload', component: UploadComponent , canActivate:[AuthGuard]},
+    {path:'pasta/animals',loadChildren:'app/pasta/home-animal/home-animal.module#HomeAnimalModule' , canActivate:[AuthGuard]},
+    {path:'pasta/cachorro',loadChildren:'app/pasta/cachorro/cachorro.module#CachorroModule' , canActivate:[AuthGuard]},
+    {path:'pasta/gato',loadChildren:'app/pasta/gato/gato.module#GatoModule' , canActivate:[AuthGuard]},
+    {path:'**'  , component:PaginaNaoEncontradaComponent}
 ]; 
 export const routing:ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
 

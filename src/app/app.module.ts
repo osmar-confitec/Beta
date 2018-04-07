@@ -41,6 +41,7 @@ import { ScriptLoaderServiceService } from './services/script-loader-service.ser
 import { UploadComponent } from './upload/upload.component';
 import { FileSelectDirective , FileUploadModule } from 'ng2-file-upload';
 import { SharedModule } from './shared/shared.module';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -81,7 +82,8 @@ import { SharedModule } from './shared/shared.module';
     TelefonePipePipe,
     CpfDiretivaDirective,
     CnpjDiretivaDirective,
-    UploadComponent
+    UploadComponent,
+    LoginComponent
     
   ],
   imports: [
