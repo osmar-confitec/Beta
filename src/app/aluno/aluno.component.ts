@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Route, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'project-B-aluno',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+      this.route.data.subscribe(info=>{
+
+        console.dir(info.usuario)
+
+      });
   }
+
+
 
 }

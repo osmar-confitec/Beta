@@ -10,6 +10,10 @@ export class AuthService {
       return this.usuarioSystem.rotas.find(x=>x.ativa && x.nomeRota === rota ) !== undefined;
   }
 
+  obterUsuario():UsuarioSystem{
+    return  this.usuarioSystem;
+  }
+
   constructor() {
 
 

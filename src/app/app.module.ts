@@ -42,6 +42,7 @@ import { UploadComponent } from './upload/upload.component';
 import { FileSelectDirective , FileUploadModule } from 'ng2-file-upload';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
+import { ProfessorModule } from './professor/professor.module';
 
 
 
@@ -87,6 +88,7 @@ import { LoginComponent } from './login/login.component';
     
   ],
   imports: [
+    ProfessorModule,
     FileUploadModule,
     BrowserModule,
     SharedModule.forRoot(),
