@@ -29,9 +29,10 @@ const APP_ROUTES: Routes = [
     { path: 'table', component: DatatableNetComponent, canActivate: [AuthGuard] },
     { path: 'grid-detalhes', component: DetailGridComponent, canActivate: [AuthGuard] },
     { path: 'upload', component: UploadComponent, canActivate: [AuthGuard] },
-    { path: 'pasta/animals', loadChildren: 'app/pasta/home-animal/home-animal.module#HomeAnimalModule', canActivate: [AuthGuard] },
-    { path: 'pasta/cachorro', loadChildren: 'app/pasta/cachorro/cachorro.module#CachorroModule', canActivate: [AuthGuard] },
-    { path: 'pasta/gato', loadChildren: 'app/pasta/gato/gato.module#GatoModule', canLoad:[GuardLoad] },
+    { path: 'animals', loadChildren: 'app/pasta/home-animal/home-animal.module#HomeAnimalModule', canActivate: [AuthGuard] },
+    { path: 'fornecedor', loadChildren: 'app/fornecedor-crud/fornecedor-crud.module#FornecedorCrudModule' },
+    { path: 'cachorro', loadChildren: 'app/pasta/cachorro/cachorro.module#CachorroModule', canActivate: [AuthGuard] },
+    { path: 'gato', loadChildren: 'app/pasta/gato/gato.module#GatoModule', canLoad:[GuardLoad] },
     { path: '**', component: PaginaNaoEncontradaComponent }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
