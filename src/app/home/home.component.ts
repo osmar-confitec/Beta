@@ -19,6 +19,9 @@ import { ScriptLoaderServiceService } from '../services/script-loader-service.se
 
 
 
+
+
+
 @Component({
   selector: 'project-B-home',
   templateUrl: './home.component.html',
@@ -53,6 +56,20 @@ AfterViewInit ,  OnInit , OnChanges , DoCheck , AfterContentInit , AfterContentC
 
     let pad = new Padronizada();
     pad.Func();
+  }
+
+  promessa():Promise<{}>{
+      return new Promise((resolve,reject)=>{
+          window.setTimeout(resolve.bind(null, 10), 3000);
+      })
+  }
+
+
+  cumprindoPromessa(){
+
+    this.promessa().then(function(value) {
+      console.log(value); // Will print 10 after 100ms.
+     });
   }
 
   importarjs(){
