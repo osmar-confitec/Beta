@@ -43,6 +43,7 @@ import { FileSelectDirective , FileUploadModule } from 'ng2-file-upload';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { ProfessorModule } from './professor/professor.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -88,6 +89,7 @@ import { ProfessorModule } from './professor/professor.module';
     
   ],
   imports: [
+    HttpClientModule,
     ProfessorModule,
     FileUploadModule,
     BrowserModule,
