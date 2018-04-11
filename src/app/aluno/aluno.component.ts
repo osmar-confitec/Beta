@@ -12,6 +12,8 @@ export class AlunoComponent implements OnInit {
 
   ngOnInit() {
 
+      let param1 = this.route.snapshot.queryParams["pagina"];
+      console.dir(param1);
       this.route.data.subscribe(info=>{
 
         console.dir(info.usuario)

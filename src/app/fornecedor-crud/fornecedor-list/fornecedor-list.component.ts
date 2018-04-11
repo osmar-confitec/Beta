@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'project-B-fornecedor-list',
@@ -8,7 +8,11 @@ import { Router } from '@angular/router';
 })
 export class FornecedorListComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private route: ActivatedRoute) {
+
+    let param1 = this.route.snapshot.queryParams["pagina"];
+    console.dir(param1);
+   }
   AdicionarFornecedor(){
 
         this.router.navigate(['/login']);
