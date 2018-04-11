@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FornecedorService } from '../../services/fornecedor.service';
 import { ISubscription } from 'rxjs/Subscription';
+import { Fornecedor } from '../../Models/fornecedor';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { ISubscription } from 'rxjs/Subscription';
 export class FornecedorListComponent implements OnInit , OnDestroy {
 
   subscription:ISubscription ;
+  fornecedores:Fornecedor[];
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -31,7 +33,7 @@ export class FornecedorListComponent implements OnInit , OnDestroy {
   ngOnInit() {
 
     this.subscription =   this.fornecedorService.ObterFornecedores().subscribe((valor)=>{
-              console.log(valor);
+             this.fornecedores = valor;
       });
   }
 
