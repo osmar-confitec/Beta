@@ -13,6 +13,9 @@ export class AuthInterceptor implements HttpInterceptor {
     | HttpResponse<any> 
     | HttpUserEvent<any>> {
 
+
+      console.log('request');
+
     return next
     .handle(req)
     .do(event => {
