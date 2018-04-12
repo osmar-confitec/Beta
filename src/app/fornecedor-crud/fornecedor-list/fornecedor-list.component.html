@@ -1,32 +1,35 @@
 <input type="button" (click)="AdicionarFornecedor()" value="adicionar">
-
+<input type="button" (click)="ObterFornecedoresCrud()" value="ObterFornecedoresCrud">
 <a routerLink="/aluno">Index</a>
 <table class="table table-sm table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Bairro</th>
+      <th>
+
+      </th>
+      <th>
+
+      </th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+      <tr *ngFor="let fornecedor of fornecedores"  >
+          <td>  
+
+          </td>
+          <td>{{fornecedor.nome}}</td>
+          <td>{{fornecedor.endereco}}</td>
+          <td>{{fornecedor.bairro}}</td>
+          <td>
+
+          </td>
+          <td>
+            
+          </td>
+      </tr>
   </tbody>
 </table>

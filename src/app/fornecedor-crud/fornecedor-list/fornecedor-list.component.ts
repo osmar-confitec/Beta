@@ -25,6 +25,12 @@ export class FornecedorListComponent implements OnInit , OnDestroy {
     let param1 = this.route.snapshot.queryParams["pagina"];
     console.dir(param1);
    }
+   ObterFornecedoresCrud(){
+
+    this.subscription =   this.fornecedorService.ObterFornecedores().subscribe((valor)=>{
+      this.fornecedores = valor;
+    });
+   }
   AdicionarFornecedor(){
 
         this.router.navigate(['/login']);
@@ -32,9 +38,7 @@ export class FornecedorListComponent implements OnInit , OnDestroy {
   }
   ngOnInit() {
 
-    this.subscription =   this.fornecedorService.ObterFornecedores().subscribe((valor)=>{
-             this.fornecedores = valor;
-      });
+
   }
 
 

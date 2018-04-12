@@ -8,6 +8,9 @@ import { Deactivaded } from '../guard/deactivaded.guard';
 import { ResolveGuard } from '../guard/resolve-guard.guard';
 import { GuardLoad } from '../guard/guard-load.guard';
 import { FornecedorService } from '../services/fornecedor.service';
+import {HTTP_INTERCEPTORS} from  '@angular/common/http';
+import { AuthInterceptor } from '../services/auth.interceptor';
+
 
 @NgModule({
   imports: [
@@ -20,7 +23,11 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [FornecedorService, ResolveGuard, CarrosinhaService ,AuthGuard, AuthService , ActiveChild, Deactivaded,GuardLoad ]                       //<<<====here
+      providers: [{provide:HTTP_INTERCEPTORS, useClass: AuthInterceptor,multi :true},
+                   FornecedorService,
+                   ResolveGuard,
+                   CarrosinhaService,
+                   AuthGuard, AuthService , ActiveChild, Deactivaded,GuardLoad ]                       //<<<====here
     };
   }
 }
