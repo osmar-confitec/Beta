@@ -44,6 +44,7 @@ import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { ProfessorModule } from './professor/professor.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 
@@ -85,7 +86,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CpfDiretivaDirective,
     CnpjDiretivaDirective,
     UploadComponent,
-    LoginComponent
+    LoginComponent,
+    FileUploadComponent
     
   ],
   imports: [

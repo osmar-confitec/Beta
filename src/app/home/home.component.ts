@@ -104,42 +104,7 @@ AfterViewInit ,  OnInit , OnChanges , DoCheck , AfterContentInit , AfterContentC
       console.log(pages);
   }
 
-  tratarPaginacao() {
-    let qtdRegisterPage = 10;
-    this.paginationprop.pages = [];
-    this.paginationprop.totalPages = Math.ceil(this.paginationprop.totalRegisters / qtdRegisterPage);
-    let startPage: number, endPage: number;
-    //se for menor ou igual a 10 show all 
-    if (this.paginationprop.totalPages <= 10) {
-      startPage = 1;
-      endPage = this.paginationprop.totalPages;
-    }
-    else {
-      // more than 10 total pages so calculate start and end pages
-      if (this.paginationprop.currentPage <= 6) {
-        startPage = 1;
-        endPage = 10;
-      } else if (this.paginationprop.currentPage + 4 >= this.paginationprop.totalPages) {
-        startPage = this.paginationprop.totalPages - 9;
-        endPage = this.paginationprop.totalPages;
-      } else {
-        startPage = this.paginationprop.currentPage - 5;
-        endPage = this.paginationprop.currentPage + 4;
-      }
-    }
 
-    // calculate start and end item indexes
-    let startIndex = (this.paginationprop.currentPage - 1) * qtdRegisterPage;
-    let endIndex = Math.min(startIndex + qtdRegisterPage - 1, this.paginationprop.totalRegisters - 1);
-
-    for (let i = startPage; i < (endPage + 1); i++) {
-      this.paginationprop.pages.push({
-        description: i.toString(),
-        numberPage: i,
-        currentPage: i == this.paginationprop.currentPage ? true : false
-      });
-    }
-  }
 
   consultarNovamente(){
 
@@ -152,7 +117,7 @@ AfterViewInit ,  OnInit , OnChanges , DoCheck , AfterContentInit , AfterContentC
       pages:[]
   
     };
-    this.tratarPaginacao();
+    
   }
 
 public tableWidget: any;
