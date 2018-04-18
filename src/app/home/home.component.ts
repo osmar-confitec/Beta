@@ -142,6 +142,7 @@ export class HomeComponent implements
 
 
 
+
   consultarNovamente() {
 
     this.paginationprop = {
