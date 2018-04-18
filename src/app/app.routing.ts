@@ -17,12 +17,14 @@ import { ProfessorUpdateComponent } from './professor/professor-update/professor
 import { Deactivaded } from './guard/deactivaded.guard';
 import { ResolveGuard } from './guard/resolve-guard.guard';
 import { GuardLoad } from './guard/guard-load.guard';
+import { StructuralDirectiveLearnTemplateRefandViewContainerRefComponent } from './structural-directive-learn-template-refand-view-container-ref/structural-directive-learn-template-refand-view-container-ref.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'aluno', component: AlunoComponent, canActivate: [AuthGuard], canDeactivate:[Deactivaded], 
     resolve: { usuario:ResolveGuard } },
     { path: 'login', component: LoginComponent },
+    { path: 'structural', component: StructuralDirectiveLearnTemplateRefandViewContainerRefComponent },
     
     { path: 'bind', component: DataBindComponent, canActivate: [AuthGuard] },
     { path: 'demanda', component: DemandaComponent, canActivate: [AuthGuard] },
