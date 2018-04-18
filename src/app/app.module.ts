@@ -44,6 +44,11 @@ import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { ProfessorModule } from './professor/professor.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ModalBootstrapComponent } from './modal-bootstrap/modal-bootstrap.component';
+import { StructuralDirectiveLearnTemplateRefandViewContainerRefComponent } from './structural-directive-learn-template-refand-view-container-ref/structural-directive-learn-template-refand-view-container-ref.component';
+import { StruturalDirective } from './strutural.directive';
+import { CorpoModalComponent } from './corpo-modal/corpo-modal.component';
 
 
 
@@ -85,7 +90,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CpfDiretivaDirective,
     CnpjDiretivaDirective,
     UploadComponent,
-    LoginComponent
+    LoginComponent,
+    FileUploadComponent,
+    ModalBootstrapComponent,
+    StructuralDirectiveLearnTemplateRefandViewContainerRefComponent,
+    StruturalDirective,
+    CorpoModalComponent
     
   ],
   imports: [
