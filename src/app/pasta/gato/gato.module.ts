@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GatoHomeComponent } from './gato-home/gato-home.component';
-import { routing } from './app.routing';
+
+import { PastaModule } from '../pasta.module';
+import { CachorroModule } from '../cachorro/cachorro.module';
+import { routingGato } from './app.routing';
 
 
 @NgModule({
   imports: [
+    
     CommonModule,
-    routing
+    routingGato,
+    PastaModule,
+    CachorroModule
   ],
   declarations: [GatoHomeComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrosinhaService } from '../../../services/carrosinha.service';
+import { ComunicacaoService } from '../../services/comunicacao.service';
 
 @Component({
   selector: 'project-B-gato-home',
@@ -8,13 +9,23 @@ import { CarrosinhaService } from '../../../services/carrosinha.service';
 })
 export class GatoHomeComponent implements OnInit {
 
-  constructor(private carrosinhaService:CarrosinhaService ) { }
+  constructor( private carrosinhaService: CarrosinhaService,
+               private comunicacaoService: ComunicacaoService) {
 
-  somar(){
 
-    
-     this.carrosinhaService.numero++;
-     console.log(this.carrosinhaService.numero)
+
+  }
+
+
+latir(){
+
+  this.comunicacaoService.emissor.emit('au');
+}
+  somar() {
+
+
+    this.carrosinhaService.numero++;
+    console.log(this.carrosinhaService.numero)
   }
   ngOnInit() {
   }

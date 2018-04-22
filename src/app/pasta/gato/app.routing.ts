@@ -5,6 +5,6 @@ import { GatoHomeComponent } from "./gato-home/gato-home.component";
 
 const APP_ROUTES : Routes = [
     
-    {path:''  , component:GatoHomeComponent }
+    {path:'home-gato'  , component:GatoHomeComponent }
 ]; 
-export const routing:ModuleWithProviders = RouterModule.forChild(APP_ROUTES);
+export const routingGato:ModuleWithProviders = RouterModule.forChild(APP_ROUTES);

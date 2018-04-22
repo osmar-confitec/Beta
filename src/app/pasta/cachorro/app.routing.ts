@@ -6,6 +6,6 @@ import { CachorroHomeComponent } from "./cachorro-home/cachorro-home.component";
 
 const APP_ROUTES : Routes = [
     
-    {path:''  , component:CachorroHomeComponent }
+    {path:'home-cachorro'  , component:CachorroHomeComponent }
 ]; 
 export const routing:ModuleWithProviders = RouterModule.forChild(APP_ROUTES);
