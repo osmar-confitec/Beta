@@ -20,6 +20,8 @@ import * as FileSaver from 'file-saver';
 
 
 import * as jsPDF from 'jspdf'
+import { TamanhoModal } from '../modal-bootstrap/enum/tamanho-modal.enum';
+import { ModalBootstrapComponent } from '../modal-bootstrap/modal-bootstrap.component';
 
 
 
@@ -34,6 +36,16 @@ export class HomeComponent implements
   AfterViewChecked,
   OnDestroy,
   AfterViewInit, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {
+
+
+  public  tamanhoModal:TamanhoModal = TamanhoModal.Grande;
+
+  @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
+
+  showmodal(){
+
+    this.modalComponent.showModal();
+  }
 
   ngOnDestroy(): void {
     console.log(` ngOnDestroy `)
@@ -510,6 +522,10 @@ export class HomeComponent implements
 
   resultadoSomatoria(resultado) {
     console.log(` resultado somatoria ${resultado} `);
+  }
+
+  selectRow(i, row){
+
   }
 
   ngOnInit() {

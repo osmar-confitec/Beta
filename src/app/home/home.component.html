@@ -1,6 +1,10 @@
 <input type="button" name="salvarArquivo" value="salvarArquivo" (click)="saveFile()" id="salvarArquivo">
 <input type="button" (click)="downloadPdf()"  value="dowloadPDF">
 <input type="button" (click)="dowloadTable()"  value="dowloadPDFTable">
+<input type="button" (click)="showmodal()" value="showmodal">
+
+
+<project-B-modal-bootstrap #modalComponent [tamanhoModal]="tamanhoModal" ></project-B-modal-bootstrap>
 
 <p>Upload</p>
 <project-B-file-upload></project-B-file-upload>

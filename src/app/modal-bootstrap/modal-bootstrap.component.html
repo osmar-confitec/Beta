@@ -1,3 +1,20 @@
-<ng-content>
+<div
+        [attr.id]="code"    
+        [ngClass]="{
+        'fade':true ,
+        'modal':true ,
+        ' modal-md': tamanhoModal ===  TamanhoModal.Medio,
+        ' modal-sm': tamanhoModal ===  TamanhoModal.Pequeno,
+        ' modal-lg': tamanhoModal ===  TamanhoModal.Grande     }" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div [ngClass]="{'modal-dialog':true ,
+                     ' modal-md': tamanhoModal ===  TamanhoModal.Medio,
+                     ' modal-sm': tamanhoModal ===  TamanhoModal.Pequeno,
+                     ' modal-lg': tamanhoModal ===  TamanhoModal.Grande     }">
+        <div class="modal-content">
+            <ng-content>
 
-</ng-content>
+            </ng-content>
+        </div>
+    </div>
+</div>
