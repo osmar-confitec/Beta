@@ -51,6 +51,7 @@ import { StruturalDirective } from './strutural.directive';
 import { CorpoModalComponent } from './corpo-modal/corpo-modal.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalBootstrapRealComponent } from './modal-bootstrap-real/modal-bootstrap-real.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ModalBootstrapComponent,
     StructuralDirectiveLearnTemplateRefandViewContainerRefComponent,
     StruturalDirective,
-    CorpoModalComponent
+    CorpoModalComponent,
+    ModalBootstrapRealComponent
     
   ],
   imports: [
@@ -110,6 +112,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule 
   ],
   providers: [BroadcastServiceService,BroadcastBooleanoService,ScriptLoaderServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[ModalBootstrapRealComponent]
 })
 export class AppModule { }
