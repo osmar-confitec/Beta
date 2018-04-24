@@ -50,7 +50,7 @@ import { StructuralDirectiveLearnTemplateRefandViewContainerRefComponent } from 
 import { StruturalDirective } from './strutural.directive';
 import { CorpoModalComponent } from './corpo-modal/corpo-modal.component';
 
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -104,6 +104,7 @@ import { CorpoModalComponent } from './corpo-modal/corpo-modal.component';
     FileUploadModule,
     BrowserModule,
     SharedModule.forRoot(),
+    NgbModule.forRoot(),
     routing,
     FormsModule,
     BrowserAnimationsModule 

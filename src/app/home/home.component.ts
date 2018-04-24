@@ -20,7 +20,7 @@ import * as FileSaver from 'file-saver';
 
 
 import * as jsPDF from 'jspdf'
-import { TamanhoModal } from '../modal-bootstrap/enum/tamanho-modal.enum';
+import { TamanhoModalEnum } from '../modal-bootstrap/enum/tamanho-modal.enum';
 import { ModalBootstrapComponent } from '../modal-bootstrap/modal-bootstrap.component';
 
 
@@ -38,7 +38,7 @@ export class HomeComponent implements
   AfterViewInit, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {
 
 
-  public  tamanhoModal:TamanhoModal = TamanhoModal.Grande;
+  public  tamanhoModal:TamanhoModalEnum = TamanhoModalEnum.Grande;
 
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
 

@@ -1,4 +1,4 @@
-export enum TamanhoModal {
+export enum TamanhoModalEnum {
 
     Pequeno = 1, 
     Medio = 2, 
