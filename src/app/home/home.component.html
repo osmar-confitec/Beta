@@ -2,9 +2,12 @@
 <input type="button" (click)="downloadPdf()"  value="dowloadPDF">
 <input type="button" (click)="dowloadTable()"  value="dowloadPDFTable">
 <input type="button" (click)="showmodal()" value="showmodal">
+<project-B-modal-bootstrap-real [tituloBotao]="'click-me'" [tamanhoModal]="tamanhoModal" ></project-B-modal-bootstrap-real>
 
+<project-B-modal-bootstrap #modalComponent [tamanhoModal]="tamanhoModal" >
 
-<project-B-modal-bootstrap #modalComponent [tamanhoModal]="tamanhoModal" ></project-B-modal-bootstrap>
+ conteudo 
+</project-B-modal-bootstrap>
 
 <p>Upload</p>
 <project-B-file-upload></project-B-file-upload>

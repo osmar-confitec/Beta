@@ -37,7 +37,7 @@ export class HomeComponent implements
   OnDestroy,
   AfterViewInit, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {
 
-
+    
   public  tamanhoModal:TamanhoModalEnum = TamanhoModalEnum.Grande;
 
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;

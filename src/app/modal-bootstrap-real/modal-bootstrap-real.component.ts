@@ -31,6 +31,8 @@ export class ModalBootstrapRealComponent implements OnInit {
 
   abrir(content) {
     let modal: NgbModalRef;
+
+    console.dir(content);
     
     switch (this.tamanhoModal) {
       case TamanhoModalEnum.Pequeno:

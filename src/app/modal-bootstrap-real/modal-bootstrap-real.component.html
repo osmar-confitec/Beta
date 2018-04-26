@@ -6,16 +6,17 @@
     </button>
   </div>
   <div class="modal-body">
-    <ng-content>
+    
+    <project-B-file-upload [Url]="'http://localhost:58647/api/uploader'" [autoUpload]="true" ></project-B-file-upload>
+    
 
-    </ng-content>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Close Click')">Fechar</button>
   </div>
 </ng-template>
 
-<button           [ngClass]="{'btn':true , 'btn-primary':true , 
+<button [ngClass]="{'btn':true , 'btn-primary':true , 
                               'btn-lg': tamanhoBotao ===  TamanhoBotaoModal.Grande,
                               'btn-sm': tamanhoBotao ===  TamanhoBotaoModal.Pequeno
                     }"  (click)="abrir(content)">{{tituloBotao}}</button>

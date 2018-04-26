@@ -24,6 +24,11 @@ export class FileUploadComponent implements OnInit, OnDestroy {
   constructor() {
   }
 
+  uploadAll(){
+
+    this.uploader.uploadAll();
+  }
+
   UploaderFile(item: any): Promise<any> {
     return new Promise((resolve, reject) => {
       console.log(item);

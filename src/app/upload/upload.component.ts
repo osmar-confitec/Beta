@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {FileUploadModule, FileUploader } from 'ng2-file-upload';
 
 
 // const URL = '/api/';
-const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
+const URL = 'http://localhost:58647/api/Uploader';
 
 @Component({
   selector: 'project-B-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css']
 })
-export class UploadComponent implements OnInit {
+export class UploadComponent implements OnInit , AfterViewInit {
 
+  ngAfterViewInit(): void {
+    this.uploader.onAfterAddingFile = (item => {
+      item.withCredentials = false;
+   });
+  }
   ngOnInit(): void {
    
   }
@@ -22,6 +27,7 @@ export class UploadComponent implements OnInit {
 
   constructor (){
     this.uploader = new FileUploader({
+      maxFileSize: 10*1024*1024, // 10 MB,
       url: URL,
       disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
       formatDataFunctionIsAsync: true,
