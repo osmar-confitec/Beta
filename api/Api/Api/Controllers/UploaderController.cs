@@ -71,21 +71,21 @@ namespace Api.Controllers
     }
     [HttpPost]
     [Route("api/Upload")]
-    public async Task<HttpResponseMessage> UploadJsonFile()
+
+    public HttpResponseMessage UploadJsonFile()
     {
-
-      var provider =
-        new MultipartFormDataStreamProvider(HttpContext.Current.Server.MapPath("~/ UploadFile"));
-
-      return await Request.Content.ReadAsMultipartAsync(provider).ContinueWith<HttpResponseMessage>(t =>
+      HttpResponseMessage response = new HttpResponseMessage();
+      var httpRequest = HttpContext.Current.Request;
+      if (httpRequest.Files.Count > 0)
       {
-        if (t.IsFaulted || t.IsCanceled)
-          return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, t.Exception);
-
-        return Request.CreateResponse(HttpStatusCode.OK);
-      });
-
+        foreach (string file in httpRequest.Files)
+        {
+          var postedFile = httpRequest.Files[file];
+          var filePath = HttpContext.Current.Server.MapPath("~/UploadFile/" + postedFile.FileName);
+          postedFile.SaveAs(filePath);
+        }
+      }
+      return response;
     }
-
   }
 }
