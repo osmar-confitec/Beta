@@ -1,9 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import {FileUploadModule, FileUploader } from 'ng2-file-upload';
+import {FileUploadModule, FileUploader, FileItem } from 'ng2-file-upload';
 
 
 // const URL = '/api/';
-const URL = 'http://localhost:58647/api/Uploader';
+const URL = 'http://localhost:58647/api/Upload';
 
 @Component({
   selector: 'project-B-upload',
@@ -13,9 +13,23 @@ const URL = 'http://localhost:58647/api/Uploader';
 export class UploadComponent implements OnInit , AfterViewInit {
 
   ngAfterViewInit(): void {
-    this.uploader.onAfterAddingFile = (item => {
-      item.withCredentials = false;
-   });
+  //   this.uploader.onAfterAddingFile = (item => {
+  //     item.withCredentials = false;
+  //  });
+
+  this.uploader.onBeforeUploadItem = (item: FileItem) => {
+    item.withCredentials = false;
+    //this.uploader.authToken = 'Bearer ' + this.boxTokenResponse.userToken;
+    this.uploader.options.additionalParameter = {
+      name: item.file.name,
+      length: item._file.size,
+    
+      contentType: item._file.type
+      //,
+      //parent_id: this.parentFolderId
+
+    };
+  };
   }
   ngOnInit(): void {
    
@@ -28,10 +42,10 @@ export class UploadComponent implements OnInit , AfterViewInit {
   constructor (){
     this.uploader = new FileUploader({
       maxFileSize: 10*1024*1024, // 10 MB,
-      url: URL,
-      disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
-      formatDataFunctionIsAsync: true,
-      formatDataFunction: async (item) => {
+      url: URL//,
+     // disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
+     // formatDataFunctionIsAsync: true,
+     /*  formatDataFunction: async (item) => {
         return new Promise( (resolve, reject) => {
           resolve({
             name: item._file.name,
@@ -40,7 +54,7 @@ export class UploadComponent implements OnInit , AfterViewInit {
             date: new Date()
           });
         });
-      }
+      } */
     });
 
     this.hasBaseDropZoneOver = false;

@@ -9,46 +9,83 @@ using System.Web.Http;
 using System.Web;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Api.Controllers
 {
 
-  public class CustomMultipartFormDataStreamProvider : MultipartFormDataStreamProvider
+  public class UploadDataModel
   {
-    public CustomMultipartFormDataStreamProvider(string path)
-        : base(path) { }
-    public override string GetLocalFileName(HttpContentHeaders headers)
-    {
-      return headers.ContentDisposition.FileName;
-    }
+    public string testString1 { get; set; }
+    public string testString2 { get; set; }
   }
+
+
   public class UploaderController : ApiController
   {
 
-
-
-
-    [HttpPost]
-
-    public Task<HttpResponseMessage> Uploader()
+    // You could extract these two private methods to a separate utility class since
+    // they do not really belong to a controller class but that is up to you
+    private MultipartFormDataStreamProvider GetMultipartProvider()
     {
-      HttpRequestMessage request = Request;
-
-      //if (!request.Content.IsMimeMultipartContent())
-      //{
-      //  throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
-      //}
-      string root = System.Web.HttpContext.Current.Server.MapPath("~/UploadFile/");
-      MultipartFormDataStreamProvider provider = new CustomMultipartFormDataStreamProvider(root);
-      var task = request.Content.ReadAsMultipartAsync(provider);
-      return task.ContinueWith(o =>
-      {
-        return new HttpResponseMessage()
-        {
-          Content = new StringContent("File uploaded.")
-        };
-      }
-      );
+      // IMPORTANT: replace "(tilde)" with the real tilde character
+      // (our editor doesn't allow it, so I just wrote "(tilde)" instead)
+      var uploadFolder = "UploadFile"; // you could put this to web.config
+      var root = HttpContext.Current.Server.MapPath(uploadFolder);
+      Directory.CreateDirectory(root);
+      return new MultipartFormDataStreamProvider(root);
     }
+
+    // Extracts Request FormatData as a strongly typed model
+    private object GetFormData<T>(MultipartFormDataStreamProvider result)
+    {
+      if (result.FormData.HasKeys())
+      {
+        var unescapedFormData = Uri.UnescapeDataString(result.FormData
+            .GetValues(0).FirstOrDefault() ?? String.Empty);
+        if (!String.IsNullOrEmpty(unescapedFormData))
+          return JsonConvert.DeserializeObject<T>(unescapedFormData);
+      }
+
+      return null;
+    }
+
+    private string GetDeserializedFileName(MultipartFileData fileData)
+    {
+      var fileName = GetFileName(fileData);
+      return JsonConvert.DeserializeObject(fileName).ToString();
+    }
+    public class CustomMultipartFormDataStreamProvider : MultipartFormDataStreamProvider
+    {
+      public CustomMultipartFormDataStreamProvider(string path)
+          : base(path) { }
+      public override string GetLocalFileName(HttpContentHeaders headers)
+      {
+        return headers.ContentDisposition.FileName;
+      }
+    }
+    public string GetFileName(MultipartFileData fileData)
+    {
+      return fileData.Headers.ContentDisposition.FileName;
+    }
+    [HttpPost]
+    [Route("api/Upload")]
+    public async Task<HttpResponseMessage> UploadJsonFile()
+    {
+
+      var provider =
+        new MultipartFormDataStreamProvider(HttpContext.Current.Server.MapPath("~/ UploadFile"));
+
+      return await Request.Content.ReadAsMultipartAsync(provider).ContinueWith<HttpResponseMessage>(t =>
+      {
+        if (t.IsFaulted || t.IsCanceled)
+          return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, t.Exception);
+
+        return Request.CreateResponse(HttpStatusCode.OK);
+      });
+
+    }
+
   }
 }

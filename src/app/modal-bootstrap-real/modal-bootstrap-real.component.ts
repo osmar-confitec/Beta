@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TipoClickEnum } from './enum/tipo-click.enum';
@@ -16,6 +16,7 @@ export class ModalBootstrapRealComponent implements OnInit {
   @Input() tituloBotao: string = ``;
   @Input() tamanhoBotao: TamanhoBotaoModalEnum = TamanhoBotaoModalEnum.Medio;
   @Input() tamanhoModal: TamanhoModalEnum = TamanhoModalEnum.Medio;
+  @Input()  loading:TemplateRef<any>
 
 
   TipoClick = TipoClickEnum;
