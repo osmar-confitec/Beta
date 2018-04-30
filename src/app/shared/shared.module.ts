@@ -12,6 +12,7 @@ import {HTTP_INTERCEPTORS} from  '@angular/common/http';
 import { AuthInterceptor } from '../services/auth.interceptor';
 import { ErrorHandlerService } from '../services/error-handler.service';
 import { UtilitariosSystemService } from '../services/utilitarios-system.service';
+import { TodoList } from '../services/todo-list';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
+        TodoList,
         {provide: ErrorHandler,useClass:ErrorHandlerService},
         {provide:HTTP_INTERCEPTORS, useClass: AuthInterceptor,multi :true},
                    FornecedorService,

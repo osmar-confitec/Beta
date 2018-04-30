@@ -52,6 +52,13 @@ import { CorpoModalComponent } from './corpo-modal/corpo-modal.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBootstrapRealComponent } from './modal-bootstrap-real/modal-bootstrap-real.component';
+import { ViewconteinerRefComponent } from './viewconteiner-ref/viewconteiner-ref.component';
+import { AlertComponent } from './alert/alert.component';
+import { TodoComponent } from './todo/todo.component';
+import { TodoInputComponent } from './todo-input/todo-input.component';
+import { TodoFooterComponent } from './todo-footer/todo-footer.component';
+import { JokeComponent } from './joke/joke.component';
+import { JokeListComponent } from './joke-list/joke-list.component';
 
 
 @NgModule({
@@ -97,7 +104,14 @@ import { ModalBootstrapRealComponent } from './modal-bootstrap-real/modal-bootst
     StructuralDirectiveLearnTemplateRefandViewContainerRefComponent,
     StruturalDirective,
     CorpoModalComponent,
-    ModalBootstrapRealComponent
+    ModalBootstrapRealComponent,
+    ViewconteinerRefComponent,
+    AlertComponent,
+    TodoComponent,
+    TodoInputComponent,
+    TodoFooterComponent,
+    JokeComponent,
+    JokeListComponent
     
   ],
   imports: [

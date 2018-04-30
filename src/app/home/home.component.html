@@ -1,7 +1,30 @@
+
+
+<joke-list>
+  <joke [joke]="joke">
+    <span class="setup">{{ joke.setup }}?</span>
+    <h1 class="punchline">{{ joke.punchline }}</h1>  
+  </joke>
+
+  
+  <joke [joke]="joke2">
+    <span class="setup">{{ joke.setup }}?</span>
+    <h1 class="punchline">{{ joke.punchline }}</h1>  
+  </joke>
+</joke-list>
+
 <input type="button" name="salvarArquivo" value="salvarArquivo" (click)="saveFile()" id="salvarArquivo">
 <input type="button" (click)="downloadPdf()"  value="dowloadPDF">
 <input type="button" (click)="dowloadTable()"  value="dowloadPDFTable">
 <input type="button" (click)="showmodal()" value="showmodal">
+
+
+
+<div #div>#div is a template variable1</div>
+
+
+
+<input type="button" (click)="showalerts()" value="showalerts">
 <project-B-modal-bootstrap-real [loading]="boasvindas"  [tituloBotao]="'click-me'" [tamanhoModal]="tamanhoModal" ></project-B-modal-bootstrap-real>
 
 <ng-template #boasvindas>
@@ -272,4 +295,11 @@
           </tr>
         </table>
       </div>
+
+    <project-B-alert></project-B-alert>
+    <project-B-alert type="'danger'"></project-B-alert>
+    <project-B-alert type="'info'"></project-B-alert>
+
+
+    
 

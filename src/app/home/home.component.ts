@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChildren, QueryList, ViewContainerRef } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 import { EnderecoModel } from '../endereco/models/endereco-model';
 
@@ -22,6 +22,8 @@ import * as FileSaver from 'file-saver';
 import * as jsPDF from 'jspdf'
 import { TamanhoModalEnum } from '../modal-bootstrap/enum/tamanho-modal.enum';
 import { ModalBootstrapComponent } from '../modal-bootstrap/modal-bootstrap.component';
+import { AlertComponent } from '../alert/alert.component';
+import { Joke } from '../Models/joke';
 
 
 
@@ -36,8 +38,12 @@ export class HomeComponent implements
   AfterViewChecked,
   OnDestroy,
   AfterViewInit, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {
-
-    
+    @ViewChildren(AlertComponent) alerts: QueryList<AlertComponent>
+    @ViewChildren("div") divs: QueryList<any>
+    @ViewChildren(AlertComponent, { read: ElementRef }) alertsElements: QueryList<ElementRef>;
+    @ViewChildren(AlertComponent, { read: ViewContainerRef }) alertsDinamical: QueryList<ViewContainerRef>;
+    joke: Joke = new Joke("A kid threw a lump of cheddar at me", "I thought ‘That’s not very mature’");
+    joke2: Joke = new Joke("This a joke 2", "I thought ‘That’s not very mature’ new joke 2");
   public  tamanhoModal:TamanhoModalEnum = TamanhoModalEnum.Grande;
 
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
@@ -171,13 +177,19 @@ export class HomeComponent implements
 
   public tableWidget: any;
 
+  showalerts(){
+
+    this.alerts.forEach(alertInstance => console.log(alertInstance));
+    this.divs.forEach(div => console.log(div));
+    this.alertsElements.forEach(el => console.log(el));
+  }
+
   ngAfterViewInit() {
 
     console.log(` ngAfterViewInit `)
     this.initDatatable();
 
-
-
+   
 
     let cf: any = $('#mascarado');
     cf.mask('99/99/9999');
