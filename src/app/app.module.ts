@@ -60,7 +60,7 @@ import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 import { JokeComponent } from './joke/joke.component';
 import { JokeListComponent } from './joke-list/joke-list.component';
 import { MoedaBrasileiraDirective } from './Diretivas/moeda-brasileira.directive';
-
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -125,7 +125,8 @@ import { MoedaBrasileiraDirective } from './Diretivas/moeda-brasileira.directive
     NgbModule.forRoot(),
     routing,
     FormsModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule ,
+    TextMaskModule
   ],
   providers: [BroadcastServiceService,BroadcastBooleanoService,ScriptLoaderServiceService],
   bootstrap: [AppComponent],

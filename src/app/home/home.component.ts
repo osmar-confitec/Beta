@@ -46,6 +46,9 @@ export class HomeComponent implements
     joke2: Joke = new Joke("This a joke 2", "I thought ‘That’s not very mature’ new joke 2");
   public  tamanhoModal:TamanhoModalEnum = TamanhoModalEnum.Grande;
 
+  public mask:(RegExp| string)[] = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  public regexp = new RegExp('^[1-9]\d{0,2}$')
+
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
 
   showmodal(){
