@@ -59,6 +59,7 @@ import { TodoInputComponent } from './todo-input/todo-input.component';
 import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 import { JokeComponent } from './joke/joke.component';
 import { JokeListComponent } from './joke-list/joke-list.component';
+import { MoedaBrasileiraDirective } from './Diretivas/moeda-brasileira.directive';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { JokeListComponent } from './joke-list/joke-list.component';
     TodoInputComponent,
     TodoFooterComponent,
     JokeComponent,
-    JokeListComponent
+    JokeListComponent,
+    MoedaBrasileiraDirective
     
   ],
   imports: [
