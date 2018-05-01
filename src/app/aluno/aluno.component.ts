@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, Route, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,6 +7,8 @@ import { Router, Route, ActivatedRoute } from '@angular/router';
   styleUrls: ['./aluno.component.css']
 })
 export class AlunoComponent implements OnInit {
+
+@Input()   mensagemPagina : string; 
 
   constructor(private route: ActivatedRoute) { }
 

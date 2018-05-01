@@ -18,9 +18,12 @@ import { Deactivaded } from './guard/deactivaded.guard';
 import { ResolveGuard } from './guard/resolve-guard.guard';
 import { GuardLoad } from './guard/guard-load.guard';
 import { StructuralDirectiveLearnTemplateRefandViewContainerRefComponent } from './structural-directive-learn-template-refand-view-container-ref/structural-directive-learn-template-refand-view-container-ref.component';
+import { DomManipulationComponent } from './dom-manipulation/dom-manipulation.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'DomManipulation', component: DomManipulationComponent},
+    
     { path: 'gato', loadChildren: 'app/pasta/gato/gato.module#GatoModule' },
     { path: 'aluno', component: AlunoComponent, canActivate: [AuthGuard], canDeactivate:[Deactivaded], 
     resolve: { usuario:ResolveGuard } },
