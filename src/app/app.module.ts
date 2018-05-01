@@ -51,18 +51,9 @@ import { StruturalDirective } from './strutural.directive';
 import { CorpoModalComponent } from './corpo-modal/corpo-modal.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-<<<<<<< HEAD
-import { ModalBootstrapRealComponent } from './modal-bootstrap-real/modal-bootstrap-real.component';
-import { ViewconteinerRefComponent } from './viewconteiner-ref/viewconteiner-ref.component';
-import { AlertComponent } from './alert/alert.component';
-import { TodoComponent } from './todo/todo.component';
-import { TodoInputComponent } from './todo-input/todo-input.component';
-import { TodoFooterComponent } from './todo-footer/todo-footer.component';
-import { JokeComponent } from './joke/joke.component';
-import { JokeListComponent } from './joke-list/joke-list.component';
+
 import { DomManipulationComponent } from './dom-manipulation/dom-manipulation.component';
 
-=======
 import { ModalBootstrapRealComponent } from './modal-bootstrap-real/modal-bootstrap-real.component';
 import { ViewconteinerRefComponent } from './viewconteiner-ref/viewconteiner-ref.component';
 import { AlertComponent } from './alert/alert.component';
@@ -73,7 +64,6 @@ import { JokeComponent } from './joke/joke.component';
 import { JokeListComponent } from './joke-list/joke-list.component';
 import { MoedaBrasileiraDirective } from './Diretivas/moeda-brasileira.directive';
 import { TextMaskModule } from 'angular2-text-mask';
->>>>>>> 74a11bc46fd21e0729f5805ca81310d525243227
 
 @NgModule({
   declarations: [
@@ -126,11 +116,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     TodoFooterComponent,
     JokeComponent,
     JokeListComponent,
-<<<<<<< HEAD
-    DomManipulationComponent
-=======
+    DomManipulationComponent,
     MoedaBrasileiraDirective
->>>>>>> 74a11bc46fd21e0729f5805ca81310d525243227
     
   ],
   imports: [
