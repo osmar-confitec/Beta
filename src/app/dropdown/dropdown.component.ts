@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DropdownComponent implements OnInit {
 
   @Output() onEmit = new EventEmitter<Modelo>()
-  @Input() selected:Modelo = new Modelo();
+  @Input() public selected:Modelo = new Modelo();
   constructor() { }
 
   onOptionsSelected(modelo:Modelo){
@@ -20,7 +20,9 @@ export class DropdownComponent implements OnInit {
 
   }
 
-  @Input()  lst: Modelo[] = [{id:0,nome:`Selecione...`},{id:1,nome:`Osmar Gonçalves Vieira`},{id:2,nome:`Maria do carmo`}] ;
+  @Input()  lst: Modelo[] = [
+    
+    {id:100,nome:`Selecione...`},{id:1,nome:`Osmar Gonçalves Vieira`},{id:2,nome:`Maria do carmo`}] ;
 
   ngOnInit() {
   }

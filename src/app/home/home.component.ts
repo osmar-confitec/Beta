@@ -50,7 +50,7 @@ export class HomeComponent implements
   public mask:(RegExp| string)[] = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   public regexp = new RegExp('^[1-9]\d{0,2}$')
 
-  public selected:Modelo = new Modelo();
+  selected:Modelo = new Modelo();
 
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
 
@@ -203,6 +203,8 @@ export class HomeComponent implements
 
   ngAfterViewInit() {
 
+    
+    this.selected.id = 100;
     console.log(` ngAfterViewInit `)
     this.initDatatable();
 
@@ -561,7 +563,7 @@ export class HomeComponent implements
 
   ngOnInit() {
 
-
+  
     let der = new PrayTimes();
     console.dir(der.getTimes(new Date(), [43, -80], -5));
     // let valortestado:any =    PrayTimes
