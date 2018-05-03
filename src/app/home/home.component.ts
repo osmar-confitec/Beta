@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChildren, QueryList, ViewContainerRef } from '@angular/core';
+import { Modelo } from './../dropdown/modelo';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChildren, QueryList, ViewContainerRef, NgZone } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
 import { EnderecoModel } from '../endereco/models/endereco-model';
 
@@ -49,10 +50,23 @@ export class HomeComponent implements
   public mask:(RegExp| string)[] = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   public regexp = new RegExp('^[1-9]\d{0,2}$')
 
+  public selected:Modelo = new Modelo();
+
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
 
-  showmodal(){
+  setarDrop(){
+   
+      // aqui é utilizado quando o angular não consiste a alteração da página ou o estado dos eventos 
+      this.selected.id = 2;
+   
+  }
 
+  selecionar(model:Modelo){
+
+    console.log(model);
+  }
+  showmodal(){
+    
     this.modalComponent.showModal();
   }
 
@@ -509,7 +523,9 @@ export class HomeComponent implements
 
   }
 
-  constructor(private service: BroadcastBooleanoService,
+  constructor(
+    private zone: NgZone,
+    private service: BroadcastBooleanoService,
     private serviceLoadScript: ScriptLoaderServiceService) {
 
 

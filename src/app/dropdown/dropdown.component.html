@@ -1,0 +1,15 @@
+ <select  [ngModel]="lst" (ngModelChange)='onOptionsSelected($event)' 
+                 placeholder="Select course" name="course">
+  
+  <option  [selected]="true" >Selecione...</option>
+  <option *ngFor="let c of lst" [ngValue]="c" [selected]="c.id == selected.id"  name="course">
+     {{c.nome}}  
+  </option>
+</select> 
+
+
+<!-- <select [ngModel]="selected">
+  <option *ngFor="let object of lst" [ngValue]="object" [selected]="object.id === selected.id">{{object.nome}}</option>
+</select> -->
+
+
