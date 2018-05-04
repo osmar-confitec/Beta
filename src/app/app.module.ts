@@ -65,6 +65,7 @@ import { JokeListComponent } from './joke-list/joke-list.component';
 import { MoedaBrasileiraDirective } from './Diretivas/moeda-brasileira.directive';
 import { TextMaskModule } from 'angular2-text-mask';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { UploadComponentConfitecComponent } from './upload-component-confitec/upload-component-confitec.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     JokeListComponent,
     DomManipulationComponent,
     MoedaBrasileiraDirective,
-    DropdownComponent
+    DropdownComponent,
+    UploadComponentConfitecComponent
     
   ],
   imports: [
