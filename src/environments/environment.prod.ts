@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: false,
+  api : `http://localhost:3000/`,
+  mensagem:'prod' 
 };

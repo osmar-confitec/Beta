@@ -1,3 +1,4 @@
+
 import { Modelo } from './../dropdown/modelo';
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChildren, QueryList, ViewContainerRef, NgZone } from '@angular/core';
 import { BroadcastBooleanoService } from '../services/broadcast-booleano.service';
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
 import 'datatables.net'
 
 import 'assets/maskplugin.js';
-
+import { environment } from '../../environments/environment';
 
 import { Book } from './models/book';
 import { Ipage } from '../pagination/interface/ipage';
@@ -51,6 +52,8 @@ export class HomeComponent implements
   public regexp = new RegExp('^[1-9]\d{0,2}$')
 
   selected:Modelo = new Modelo();
+
+  env:string = ``;
 
   @ViewChild('modalComponent') modalComponent:ModalBootstrapComponent;
 
@@ -563,7 +566,7 @@ export class HomeComponent implements
 
   ngOnInit() {
 
-  
+    this.env = environment.mensagem;
     let der = new PrayTimes();
     console.dir(der.getTimes(new Date(), [43, -80], -5));
     // let valortestado:any =    PrayTimes
