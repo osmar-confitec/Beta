@@ -66,6 +66,7 @@ import { MoedaBrasileiraDirective } from './Diretivas/moeda-brasileira.directive
 import { TextMaskModule } from 'angular2-text-mask';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { UploadComponentConfitecComponent } from './upload-component-confitec/upload-component-confitec.component';
+import { MoedaFinalBrDirective } from './Diretivas/moeda-final-br.directive';
 
 @NgModule({
   declarations: [
@@ -121,7 +122,8 @@ import { UploadComponentConfitecComponent } from './upload-component-confitec/up
     DomManipulationComponent,
     MoedaBrasileiraDirective,
     DropdownComponent,
-    UploadComponentConfitecComponent
+    UploadComponentConfitecComponent,
+    MoedaFinalBrDirective
     
   ],
   imports: [
